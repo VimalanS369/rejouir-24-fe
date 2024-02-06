@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Japanese 3017';
+  src: url('./Japanese\ 3017.otf') format('woff');
+  /* Add additional font formats if needed */
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Japanese 3017", sans-serif;
+  scroll-behavior: smooth;
+  
+}
+body{
+ 
+}
+
+
+
+
