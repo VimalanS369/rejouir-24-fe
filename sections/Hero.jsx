@@ -7,7 +7,8 @@
 import { easeIn, motion } from 'framer-motion';
 import { useEffect } from 'react';
 import styles from '../styles';
-import { staggerContainer  } from '../utils/motion';
+import { staggerContainer } from '../utils/motion';
+
 
 const Hero = () => {
   useEffect(() => {
@@ -54,7 +55,7 @@ const Hero = () => {
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: -30 }}
           transition={{ duration: 0.5, ease: easeIn }}
-          className="absolute z-5 w-1/2 md:w-1/4 left-0 bottom-[-100px] md:bottom-[50px] lg:bottom-[200px]"
+          className="absolute z-5 w-1/2 md:w-1/4 left-0 bottom-[-100px] md:bottom-[50px] lg:bottom-[200px] xl:left-[-300px]"
         >
           <img
             src="/tcherryblossom.svg"
@@ -95,7 +96,7 @@ const Hero = () => {
         />
       </motion.div>
 
-      <motion.div className=" absolute z-5 scale-[90%] md:scale-[50%] flex-col items-center">
+      <motion.div className=" absolute z-5 scale-[60%] md:scale-[30%] flex-col items-center">
         <motion.img
           src="/darkredcircle.svg"
           id="L2"
@@ -108,6 +109,8 @@ const Hero = () => {
         />
 
       </motion.div>
+
+      <motion.div />
 
     </section>
   );

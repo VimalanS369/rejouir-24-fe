@@ -10,12 +10,11 @@ import { ExploreCard, TitleText, TypingText } from '../../components';
 const Event = () => {
   const [search, setSearch] = useState('');
 
-  const filteredEvents = eventData.filter((event) =>
-    event.title.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredEvents = eventData.filter((event) => event.title.toLowerCase().includes(search.toLowerCase()));
 
   return (
-  <section className="flex flex-col justify-center items-center bg-primary-black h-full w-full pl-0 pr-6  ">
+  < section className="flex flex-col justify-center items-center bg-primary-black h-full w-full pl-0 pr-6" >
+
     <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-5xl 2xl:text-6xl font-bold text-white mt-4 text-center md:py-2">Choose An Event </h1>
     <div className="my-8 w-full sm:w-3/4 lg:w-1/2">
         <input
@@ -31,6 +30,7 @@ const Event = () => {
                 <Card key={event.id} event={event} />
             ))}
     </div>
+
   </section>
 );
             };

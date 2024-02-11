@@ -19,8 +19,23 @@ module.exports = {
       boxShadow: {
         '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
         'extra-lg': '0 20px 30px -1px rgba(0, 0, 0, 0.9)',
-      }
+      },
+      // fontFamily: {
+      //       'sans': ['-apple-system', 'BlinkMacSystemFont',],
+      //       'serif': ['Georgia', 'Cambria',],
+      //       'mono': ['SFMono-Regular', 'Menlo',],
+      //       'display': ['Oswald',],
+      //       'body': ['Open Sans',],
+      //         },
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [require( 'daisyui' )],
+  variants: {
+    extend: {
+      flexDirection: ['responsive', 'portrait'],
+      position: ['responsive', 'portrait'],
+    },
+  },
+
 };
+
