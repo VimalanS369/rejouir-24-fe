@@ -12,7 +12,6 @@ const Page = () => (
     <Register />
     <Feedback />
     <Partners />
-    <World />
     <Footer />
 
   </div>

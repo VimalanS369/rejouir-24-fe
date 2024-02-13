@@ -18,7 +18,7 @@ export const TypingText = ({ title, textStyles }) => (
 export const TypingBoldText = ({ title, textStyles }) => (
   <motion.p
     variants={textContainer}
-    className={`mt-[8px] font-bold md:text-[64px] text-[40px] text-red-700 ${textStyles}`}
+    className={`mt-[8px] font-bold md:text-[64px] text-[40px] text-[#331E10] ${textStyles}`}
   >
     {Array.from(title).map((letter, index) => (
       <motion.span variants={textVariant2} key={index}>
@@ -39,12 +39,12 @@ export const TitleText = ({ title, textStyles }) => (
   </motion.h2>
 );
 export const TitleText2 = ({ title1, title2, textStyles }) => (
-  <div className={`mt-[8px] font-bold md:text-[64px] text-[40px] text-[#333] ${textStyles}`}>
+  <div className={`mt-[8px] font-bold md:text-[64px] text-[40px] text-fire-engine-red ${textStyles}`}>
     <motion.h2>
-      <motion.div variants={fadeIn('left', 'tween', 0, 0.5)} style={{ display: 'inline-block' }} className="pr-4">
+      <motion.div variants={fadeIn('left', 'tween', 0, 0.5)} style={{ display: 'inline-block' }} className="pr-4 font-title2">
         {title1}
       </motion.div>
-      <motion.div variants={fadeIn('right', 'tween', 0.5, 0.7)} style={{ display: 'inline-block' }}>
+      <motion.div variants={fadeIn('right', 'tween', 0.5, 0.7)} style={{ display: 'inline-block' }} className="font-title">
         {title2}
       </motion.div>
     </motion.h2>
@@ -53,10 +53,10 @@ export const TitleText2 = ({ title1, title2, textStyles }) => (
 export const TitleText3 = ({ title1, title2, textStyles }) => (
   <div className={`mt-[8px] font-bold md:text-[64px] text-[40px] text-[#333] ${textStyles}`}>
     <motion.h2>
-      <motion.div variants={fadeIn('right', 'tween', 0, 0.5)} style={{ display: 'inline-block' }} className="pr-4">
+      <motion.div variants={fadeIn('right', 'tween', 0, 0.5)} style={{ display: 'inline-block' }} className="pr-4 font-title">
         {title1}
       </motion.div>
-      <motion.div variants={fadeIn('left', 'tween', 0.5, 0.7)} style={{ display: 'inline-block' }}>
+      <motion.div variants={fadeIn('left', 'tween', 0.5, 0.7)} style={{ display: 'inline-block' }} className="font-title2">
         {title2}
       </motion.div>
     </motion.h2>

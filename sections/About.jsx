@@ -31,11 +31,10 @@ const About = () => (
         <motion.p
           variants={fadeIn('up', 'tween', 0.2, 1)}
           className="mt-[8px] font-normal text-[14px] sm:text-[20px] lg:text-[32px] text-center text-secondary-white md:text-left md:w-[55%] z-0"
-        >
-          <span className="font-extrabold font-family-sans text-red bg-black border-r-4 text-red-700">Rejouir</span> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.scrambled it to make a type specimen book.
-          It has survived not only five centuries, but also the leap into electronic typesetting
+        ><span className="transition-colors duration-300 hover:text-fire-engine-red"><span className="font-extrabold font-title space-between-4 text-redborder-r-4">REJOUIR</span> <span className="font-extrabold font-title2 space-between-4 text-redborder-r-4 ">2024</span></span>,
+          an annual cultural and technical fest hosted by Puducherry Technological University, spans three dynamic days. Drawing college students nationwide, it's a vibrant convergence of talent and passion.
+          From captivating cultural performances to cutting-edge technical showcases, every moment brims with energy.
+          It's more than an event; it's a celebration of innovation and youthful exuberance. Rejouir 2024 - where creativity meets competition and dreams take flight.
         </motion.p>
 
       </div>

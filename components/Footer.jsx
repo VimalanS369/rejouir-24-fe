@@ -17,13 +17,13 @@ const Footer = () => (
     <div className={`${styles.innerWidth} mx-auto flex flex-col gap-8`}>
 
       <div className="flex flex-col">
-        <div className="mb-[50px] h-[2px] bg-white opacity-10" />
+        <div className="mb-[50px] h-[2px] bg-secondary-white opacity-10" />
 
         <div className="flex items-center justify-between flex-wrap gap-4">
-          <h4 className="font-extrabold text-[24px] text-white">
-            ICON
+          <h4 className="font-extrabold text-[24px] text-secondary-white">
+            REJOUIR
           </h4>
-          <a href="" className="font-normal text-[14px] text-white opacity-50">
+          <a href="" className="font-normal text-[14px] text-secondary-white opacity-100">
             Made  with  ❤️   from  PTU
           </a>
 
@@ -33,7 +33,7 @@ const Footer = () => (
                 key={social.name}
                 src={social.url}
                 alt={social.name}
-                className="w-[24px] h-[24px] object-contain cursor-pointer"
+                className="w-[24px] h-[24px] object-contain cursor-pointer filter invert"
               />
             ))}
           </div>

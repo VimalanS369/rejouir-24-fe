@@ -5,23 +5,40 @@
 
 
 @font-face {
-  font-family: 'Japanese 3017';
+  font-family: 'Japanese_3017';
   src: url('./Japanese\ 3017.otf') format('woff');
-  /* Add additional font formats if needed */
+
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Josefin_Sans';
+  src: url('./JosefinSans-Regular.ttf') format('woff');
+  
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ProtestRevolution';
+  src: url('./ProtestRevolution-Regular.ttf') format('woff');
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif, 'Japanese 3017' ;
+  font-family: 'Josefin_Sans', 'Japanese 3017', sans-serif ;
   scroll-behavior: smooth;
   
 }
 body{
  
 }
+
 
 .text {
   font-family:"微软雅黑", "Dosis", sans-serif;
@@ -62,54 +79,6 @@ body{
     -22px 44px 1px #cfcdcd;
 }
 
-.waves1 {
-  position: absolute;
-  width: 110%;
-  height: 500px;
-  z-index: 50;
-  background-size: 100px 50px;
-  background-image: 
-    radial-gradient(circle at 50% 100%, #FFCCCC 10%, #FFB6C1 11%, #FFB6C1 23%, #FFCCCC 24%, #FFCCCC 30%, #FFCCCB 31%, #FFCCCB 43%, #FFCCCC 44%, #FFCCCC 50%, #FFD1DC 51%, #FFD1DC 63%, #FFCCCC 64%, #FFCCCC 71%, transparent 71%, transparent);  
-  animation: waves 3s ease-in-out infinite;
-}
-
-.waves2 {
-  position: absolute;
-  width: 110%;
-  height: 500px;
-  z-index: 10;
-  background-size: 100px 50px;
-  background-image: 
-    radial-gradient(circle at 100% 150%, #FFD1DC 24%, #FFCCCC 25%, #FFCCCC 28%, #FFCCCC 29%, #FFCCCC 36%, #FFCCCC 36%, #FFCCCC 40%, transparent 40%, transparent),
-    radial-gradient(circle at 0 150%, #FFD1DC 24%, #FFCCCC 25%, #FFCCCC 28%, #FFCCCC 29%, #FFCCCC 36%, #FFCCCC 36%, #FFCCCC 40%, transparent 40%, transparent), 
-    radial-gradient(circle at 100% 50%, #FFCCCC 5%, #FFC0CB 6%, #FFC0CB 15%, #FFCCCC 16%, #FFCCCC 20%, #FFD1DC 21%, #FFD1DC 30%, #FFCCCC 31%, #FFCCCC 35%, #FFCCCC 36%, #FFCCCC 45%, #FFCCCC 46%, #FFCCCC 49%, transparent 50%, transparent),
-    radial-gradient(circle at 0 50%, #FFCCCC 5%, #FFC0CB 6%, #FFC0CB 15%, #FFCCCC 16%, #FFCCCC 20%, #FFD1DC 21%, #FFD1DC 30%, #FFCCCC 31%, #FFCCCC 35%, #FFCCCC 36%, #FFCCCC 45%, #FFCCCC 46%, #FFCCCC 49%, transparent 50%, transparent);  
-  animation: waves2 3s ease-in-out infinite;
-}
-
-.waves3 {
-  position: absolute;
-  width: 110%;
-  height: 500px;
-  z-index: 100;
-  background-size: 100px 50px;
-  background-image: 
-    radial-gradient(circle at 100% 150%, #FFD1DC 24%, #FFCCCC 25%, #FFCCCC 28%, #FFCCCC 29%, #FFCCCC 36%, #FFCCCC 36%, #FFCCCC 40%, transparent 40%, transparent),
-    radial-gradient(circle at 0 150%, #FFD1DC 24%, #FFCCCC 25%, #FFCCCC 28%, #FFCCCC 29%, #FFCCCC 36%, #FFCCCC 36%, #FFCCCC 40%, transparent 40%, transparent);  
-  animation: waves2 3s ease-in-out infinite;
-}
-
-@keyframes waves {
-  0% {left: 5px}
-  50% {left: -5px}
-  100% {left: 5px}
-}
-
-@keyframes waves2 {
-  0% {left: -5px}
-  50% {left: 5px}
-  100% {left: -5px}
-}
 
 
 

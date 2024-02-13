@@ -12,7 +12,7 @@ const FeedbackCard = () => (
   >
     <motion.form
       onSubmit={handleSubmit}
-      className="p-4 bg-black  bg-opacity-30 rounded-lg shadow-md space-y-2 sm:p-6 sm:w-96"
+      className="p-4 bg-secondary-white  bg-opacity-30 rounded-lg shadow-md space-y-2 sm:p-6 sm:w-96"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}

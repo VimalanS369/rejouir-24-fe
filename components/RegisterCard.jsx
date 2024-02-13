@@ -20,7 +20,6 @@ const RegisterCard = ({ id, imgUrl, title, index, handleClick }) => (
       {title}
     </h3>
 
-    )
   </motion.div>
 );
 

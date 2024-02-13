@@ -67,7 +67,7 @@ const Hero = () => {
         </motion.div>
 
         <motion.div initial={{ opacity: 0, scale: 0, rotate: -90 }} animate={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.3 }}
-          className="relative z-10  flex-col items-center"
+          className="relative z-10  flex-col items-center blur-[2px]"
         >
           <img
             src="/kkoi.svg"
@@ -96,7 +96,7 @@ const Hero = () => {
         />
       </motion.div>
 
-      <motion.div className=" absolute z-5 scale-[60%] md:scale-[30%] flex-col items-center">
+      <motion.div className=" absolute z-5 scale-[60%] md:scale-[30%] flex-col items-center ">
         <motion.img
           src="/darkredcircle.svg"
           id="L2"
@@ -105,6 +105,19 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 1 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.3, ease: easeIn }}
+          style={{ width: '200vw' }}
+        />
+
+      </motion.div>
+      <motion.div className="absolute z-10 scale-[60%] md:scale-[30%] flex-col items-center invert">
+        <motion.img
+          src="/Rejouir logo red dotwquote.svg"
+          id="L2"
+          alt="Image 2"
+          className="w-full "
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 2 }}
+          transition={{ duration: 0.3 }}
           style={{ width: '200vw' }}
         />
 

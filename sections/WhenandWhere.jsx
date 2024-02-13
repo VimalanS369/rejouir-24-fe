@@ -16,22 +16,19 @@ const WhenandWhere = () => (
       className={`${styles.innerWidth} mx-auto ${styles.flexCenter} flex-col`}
     >
       <TitleText3
-        title1={<>Word1 </>}
-        title2={<>Word2</>}
+        title1={<>The Drums of </>}
+        title2={<>Celebration</>}
       />
       <div className="flex flex-col-reverse md:flex-row-reverse items-center justify-center md:justify-between relative">
         <div className="absolute opacity-[20%] md:opacity-[100%] md:absolute md:top-0 md:left-[-50px] w-full h-full flex items-left justify-start">
-          <motion.img variants={fadeIn('right', 'tween', 1, 0.5)} src="./branch top.svg" className="h-[100%] w-1/2 absolute z-10" />
-          <motion.img variants={fadeIn('up', 'tween', 0.5, 0.5)} src="./branchbg.svg" className="absolute h-[100%] w-1/4 z-7" />
+          <motion.img variants={fadeIn('right', 'tween', 1, 0.5)} src="./branchbg.svg" className="h-[100%] w-1/2 absolute z-10" />
+          <motion.img variants={fadeIn('up', 'tween', 0.5, 0.5)} src="./backround.svg" className="absolute h-[100%] w-1/4 z-7" />
         </div>
         <motion.p
           variants={fadeIn('right', 'tween', 0.2, 1)}
           className="mt-[8px] font-normal text-[14px] sm:text-[20px] lg:text-[32px] text-center text-secondary-white md:text-left md:w-[55%] z-0"
         >
-          <span className="font-extrabold font-family-sans text-red border-r-4 text-black">Save your Dates</span> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.scrambled it to make a type specimen book.
-          It has survived not only five centuries, but also the leap into electronic typesetting
+        Channeling Joyboy's spirit, <span className="font-extrabold font-title space-between-4 text-redborder-r-4 transition-colors duration-300 hover:text-fire-engine-red">REJOUIR 2024</span> ignites a three-day celebration where youthful hearts dance to the beat of innovation. Forget academic burdens - immerse in cultural vibrancy and cutting-edge tech showcases. More than an event, it's a nationwide pilgrimage for students, united by the magic of creativity, competition, and shared dreams. Here, passion finds its voice in a thousand echoes,  reminding us that<span className="font-extrabold font-family-sans text-red border-r-4 text-black"> the best cure for humanity's ills is the simple act of celebrating together.</span>
         </motion.p>
       </div>
     </motion.div>

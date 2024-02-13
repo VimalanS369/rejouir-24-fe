@@ -61,7 +61,7 @@ export const eventData = [
 
 ];
 
-export const logos = ['icon_finale.png', 'star n.png', 'ptu-logo.png', 'icon_finale.png', 'star n.png', 'ptu-logo.png']; // Add your logo URLs
+export const logos = ['Rejouir logo red dotwquote.svg', 'star n.png', 'ptu-logo.png', 'icon_finale.png', 'star n.png', 'ptu-logo.png']; // Add your logo URLs
 
 export const socials = [
   {
