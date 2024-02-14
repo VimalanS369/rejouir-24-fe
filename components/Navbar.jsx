@@ -9,7 +9,7 @@ import { navVariants } from '../utils/motion';
 
 const Navbar = () => (
   <section>
-    <div className="navbar bg-transparent text-secondary-white">
+    <div className="navbar bg-primary-black text-secondary-white">
       <div className="navbar-start">
         <div className="absolute opacity-10 inset-0 right-10 bg-gradient-to-r" />
         <div className="dropdown">

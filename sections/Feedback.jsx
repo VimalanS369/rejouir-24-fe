@@ -2,11 +2,10 @@
 
 import { motion } from 'framer-motion';
 import { handleSubmit } from 'react';
-import { TitleText, TypingBoldText } from '../components';
+import { TitleText } from '../components';
 import styles from '../styles';
 import { fadeIn, staggerContainer } from '../utils/motion';
 
-import { TitleText2 } from '../components/CustomTexts';
 
 const Feedback = () => (
   <section className={`${styles.paddings} relative z-10`}>
@@ -20,10 +19,10 @@ const Feedback = () => (
     >
        <TitleText title="Drop your Queries" textStyles="text-center" />
       <div className="flex flex-col md:flex-row items-center justify-center md:justify-between relative">
-        <div className="opacity-[20%] md:opacity-[100%] md:absolute md:top-0 md:left-0 w-full h-full flex items-left justify-end">
-          <motion.img variants={fadeIn('left', 'tween', 1, 0.5)} src="./nikaed.png" className="absolute w-[75%] xl:w-1/4 md:w-1/2 z-10 opacity-60 items-left justify-end" />
-          <motion.img variants={fadeIn('right', 'tween', 0, 0.5)} src="./seabottomm.png" className="absolute w-[75%]  xl:w-1/2 z-1" />
-          <motion.img variants={fadeIn('up', 'tween', 0.5, 0.5)} src="./rectt.png" className="absolute w-[75%]  xl:w-1/2 z-7" />
+        <div className="opacity-[20%] md:opacity-[100%] md:absolute md:top-0 md:left-0 w-full h-full flex sm:items-left md:items-center sm:justify-center md:justify-end">
+          <motion.img variants={fadeIn('left', 'tween', 1, 0.5)} src="./japfanflower.svg" className="absolute w-[75%] lg:w-1/4 md:w-1/2 z-10 items-center justify-end" />
+          <motion.img variants={fadeIn('right', 'tween', 0, 0.5)} src="./japfanredcircle.svg" className="absolute w-[75%] lg:w-1/4 md:w-1/2 z-1" />
+          <motion.img variants={fadeIn('up', 'tween', 0.5, 0.5)} src="./japfan.svg" className="absolute w-[75%] lg:w-1/4 md:w-1/2 z-7 " />
         </div>
 
         <div variants={fadeIn('up', 'tween', 0.2, 1)}

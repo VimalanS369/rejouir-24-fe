@@ -11,7 +11,7 @@ const Footer = () => (
     variants={footerVariants}
     initial="hidden"
     whileInView="show"
-    className={`${styles.xPaddings} py-8 relative`}
+    className={`${styles.xPaddings} py-8 relative bg-primary-black`}
   >
     <div className="gradient-02" />
     <div className={`${styles.innerWidth} mx-auto flex flex-col gap-8`}>
