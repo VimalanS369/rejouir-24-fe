@@ -9,43 +9,43 @@ import styles from '../../styles';
 import { textVariant, fadeIn, staggerContainer } from '../../utils/motion';
 
 const Signup = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const router = useRouter();
+  const [userDetails, setUserDetails] = useState({
+    email: '',
+    password: '',
+  });
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPopup, setShowPopup] = useState(false);
 
-  const handleSignup = async () => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserDetails((prevDetails) => ({ ...prevDetails, [name]: value }));
+  };
+
+  const handleConfirmPasswordChange = (e) => {
+    const { value } = e.target;
+    setConfirmPassword(value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (userDetails.password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+    console.log(userDetails);
+
     try {
-      const response = await axios.post('http://127.0.0.1:8000/login/', {
-        email,
-        password,
-      });
-      console.log('email:', response.data);
-      const authToken = response.data.token; // Extract token from response
-      console.log('Received Token:', authToken); // Log the token
-      localStorage.setItem('authToken', authToken); // Store the token in localStorage
-      const uid = response.data.user_id;
-      const uname = response.data.user_name;
-      localStorage.setItem('user_id', uid);
-      localStorage.setItem('user_name', uname);
-
-      if (response.data.success) {
-        // Login successful, navigate to home page with the user's details
-        router.push('/');
-        const authToken = response.data.token;
-        console.log('after login Token:', authToken);
-      } else {
-        // Incorrect credentials, display pop-up message
-        setShowPopup(true);
-        setLoginStatus('Username or password is incorrect');
-      }
+      const response = await axios.post('http://127.0.0.1:8000/signup/', userDetails);
+      console.log('Registration successful:', response.data);
+      alert("Registration successful. Login to continue");
+      setShowPopup(true);
     } catch (error) {
-      console.error('Login failed:', error);
-      alert('Login failed. Please try again.');
+      console.error('Registration failed:', error);
+      alert("Registration failed.");
     }
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+
 
   return (
     <motion.section
@@ -79,8 +79,8 @@ const Signup = () => {
             type="email"
             name="email"
             placeholder="Your Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={userDetails.email}
+            onChange={handleChange}
             className="py-2 px-3 rounded-md border bg-transparent text-white w-full"
             required
           />
@@ -92,20 +92,31 @@ const Signup = () => {
             type="password"
             name="password"
             placeholder="Your Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={userDetails.password}
+            onChange={handleChange}
+            className="py-2 px-3 rounded-md border bg-transparent text-white w-full"
+            required
+          />
+          <label 
+            className="py-5 px-1 pt-3 bg-transparent text-white w-full top-5">Confirm Password</label>
+          <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            value={confirmPassword}
+            onChange={handleConfirmPasswordChange}
             className="py-2 px-3 rounded-md border bg-transparent text-white w-full"
             required
           />
           <button
             type="submit"
             className="py-2 px-4 bg-fire-engine-red hover:bg-red-800 text-white rounded-lg w-full"
-            onClick={handleSignup}
+           
           >
             Login
           </button>
           <div className="w-full text-center mt-8">
-            <p className="text-sm text-white">Already Have an account?<a href="#sign-up" className="text-sm text-white font-bold ml-4">Login</a>
+            <p className="text-sm text-white">Already Have an account?<a href="/login" className="text-sm text-white font-bold ml-4">Login</a>
             </p>
           </div>
         </motion.form>

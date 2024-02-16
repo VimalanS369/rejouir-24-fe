@@ -68,11 +68,11 @@ const Login = () => {
           variants={fadeIn('up', 'tween', 0, 0.5)}
           className="relative w-full md:w-1/2 p-[30px] py-[70px] m-0 bg-black bg-opacity-30 rounded-xl space-y-6"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 text-center">
             LOGIN
           </h1>
           <label 
-            className="py-2 px-1 bg-transparent text-white w-full">Email</label>
+            className="py-2 px-1 bg-transparent text-black w-full">Email</label>
           <input
             type="email"
             name="email"
@@ -83,7 +83,7 @@ const Login = () => {
             required
           />
           <label 
-            className="py-5 px-1 pt-3 bg-transparent text-white w-full top-5">Password</label>
+            className="py-5 px-1 pt-3 bg-transparent text-black w-full top-5">Password</label>
           <input
             type="password"
             name="password"
@@ -95,14 +95,14 @@ const Login = () => {
           />
           <button
             type="submit"
-            className="py-2 px-4 bg-fire-engine-red hover:bg-red-800 text-white rounded-lg w-full"
+            className="py-2 px-4 bg-fire-engine-red hover:bg-red-800 text-black rounded-lg w-full"
             onClick={handleLogin}
           >
             Login
           </button>
           <div className="w-full text-center mt-8">
-            <a href="#forgot-password" className="text-sm text-white">Forgot password?</a>
-            <a href="#sign-up" className="text-sm text-white ml-4">Sign up</a>
+            <a href="#forgot-password" className="text-sm text-black">Forgot password?</a>
+            <a href="#sign-up" className="text-sm text-black ml-4">Sign up</a>
           </div>
         </motion.form>
       </div>

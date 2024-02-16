@@ -42,7 +42,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className={`${styles.yPaddings} ${styles.fullScreen} flex flex-col justify-center items-center  relative`}>
+    <section className={`${styles.yPaddings} ${styles.fullScreen} flex flex-col justify-center items-center z-0 relative`}>
 
       <motion.div
         variants={staggerContainer}

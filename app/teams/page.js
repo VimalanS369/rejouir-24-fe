@@ -1,40 +1,183 @@
 'use client';
-
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import { motion } from 'framer-motion';
+import Navbar from '../../components/Navbar';
 
-import styles from '../../styles';
-import Card from '../../components/Card';
-import { eventData } from '../../constants';
-import { staggerContainer } from '../../utils/motion';
-import { ExploreCard, TitleText, TypingText } from '../../components';
+function TeamComponent() {
+  const [teamLead, setTeamLead] = useState('');
+  const [teamMembers, setTeamMembers] = useState([]);
+  const [studentSuggestions, setStudentSuggestions] = useState([]);
+  const [storedTeamID, setStoredTeamID] = useState('');
+  const [eventName, setEventName] = useState('');
+  const [eventId, setEventId] = useState('');
 
-const Event = () => {
-  const [search, setSearch] = useState('');
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    const urlSearchParams = new URLSearchParams(currentUrl.split('?')[1]);
+    const newEventName = urlSearchParams.get('eventName');
+    const newEventId = urlSearchParams.get('eventId');
 
-  const filteredEvents = eventData.filter((event) =>
-    event.title.toLowerCase().includes(search.toLowerCase())
-  );
+    if (newEventName !== eventName || newEventId !== eventId) {
+      setEventName(newEventName);
+      setEventId(newEventId);
+
+      const authToken = localStorage.getItem('authToken');
+      const uid = localStorage.getItem('user_id');
+
+      fetch(`http://127.0.0.1:8000/event-team-lead/${uid}/${newEventId}/`, {
+        method: 'GET',
+        headers: {
+          Authorization: `Token ${authToken}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          const teamID = data.id;
+          console.log("team id",teamID)
+          localStorage.setItem('teamData', JSON.stringify(teamID));
+          setStoredTeamID(teamID);
+          fetchStudents(teamID);
+        })
+        .catch((error) => {
+          console.error('Error fetching event names:', error);
+        });
+
+      const storedUserName = localStorage.getItem('user_name');
+      setTeamLead(storedUserName);
+    }
+  }, [eventName, eventId]);
+
+  async function fetchStudents(teamID) {
+    try {
+      const authToken = localStorage.getItem('authToken');
+      const studentsResponse = await fetch(`http://127.0.0.1:8000/add-team-member/${teamID}/`, {
+        method: 'GET',
+        headers: {
+          Authorization: `Token ${authToken}`,
+        },
+      });
+
+      const studentsData = await studentsResponse.json();
+      const studentNames = studentsData.map((student) => student.name);
+      setStudentSuggestions(studentNames);
+    } catch (err) {
+      console.error('Failed to fetch students:', err);
+    }
+  }
+
+  async function save(event) {
+    event.preventDefault();
+    const authToken = localStorage.getItem('authToken');
+    const uid = localStorage.getItem('user_id');
+
+    try {
+      const formattedTeamMembers = teamMembers.map((name) => ({ name }));
+      const teamData = {
+        team_member: formattedTeamMembers,
+      };
+
+      await fetch(`http://127.0.0.1:8000/add-team-member/${storedTeamID}/`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Token ${authToken}`,
+        },
+        body: JSON.stringify(teamData),
+      });
+
+      alert('Team Created Successfully');
+      setTeamLead('');
+      setTeamMembers([]);
+    } catch (err) {
+      alert('Failed to create team');
+    }
+  }
+
+  function handleTeamMembersChange(values) {
+    setTeamMembers(values);
+  }
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.5 } },
+  };
+
+  const cardVariants = {
+    hidden: { scale: 0.5 },
+    visible: { scale: 1, transition: { duration: 0.5 } },
+  };
 
   return (
-  <section className="flex flex-col justify-center items-center bg-primary-black h-full w-full pl-0 pr-6  ">
-    <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-5xl 2xl:text-6xl font-bold text-white mt-4 text-center md:py-2">Choose An Event </h1>
-    <div className="my-8 w-full sm:w-3/4 lg:w-1/2">
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search for "
-          className="p-2 w-full"
-        />
+    <>
+      <div className="bg-banner text-black py-2 px-4 text-center font-extrabold text-xl">
+        <p>Add team members for {eventName}</p>
       </div>
-    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 2xl:grid-cols-3 py-5 px-4 gap-0">
-            {filteredEvents.map((event) => (
-                <Card key={event.id} event={event} />
-            ))}
-    </div>
-  </section>
-);
-            };
+      
+      <motion.div
+        className="bg-primary-black text-white p-4 h-screen flex justify-center items-center"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div
+          className="bg-black bg-opacity-30 p-8 rounded-lg w-full max-w-xl"
+          variants={cardVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <h1 className="text-3xl font-bold mb-4 text-center uppercase">Team Details</h1>
+          <div className="container mt-4">
+            <form>
+              <div className="mb-4">
+                <label className="block text-lg font-semibold mb-2">Team Lead</label>
+                <input
+                  type="text"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500 text-black bg-white"
+                  value={teamLead}
+                  readOnly
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-lg font-semibold mb-2">Team Members</label>
+                <input
+                  type="text"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500 text-black bg-white"
+                  value={teamMembers}
+                  onChange={(e) => handleTeamMembersChange(e.target.value.split(','))}
+                  list="studentSuggestions"
+                  multiple
+                />
+                <datalist id="studentSuggestions">
+                  {studentSuggestions.map((name, index) => (
+                    <option key={index} value={name} />
+                  ))}
+                </datalist>
+              </div>
+              <div className="mb-4">
+                <label className="block text-lg font-semibold mb-2">Event </label>
+                <input
+                  type="text"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500 text-black bg-white"
+                  value={eventName}
+                  readOnly
+                />
+              </div>
+              <div>
+                <button
+                  className="bg-red-700 hover:bg-red-800 text-white font-semibold py-2 px-4 rounded-lg transition-transform duration-300 mt-4"
+                  onClick={save}
+                >
+                  Add Member
+                </button>
+              </div>
+            </form>
+          </div>
+        </motion.div>
+      </motion.div>
+    </>
+  );
+}
 
-export default Event;
+export default TeamComponent;
+

@@ -69,7 +69,7 @@ function StudentComponent() {
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 text-center md:pb-4">
           Student Details
         </h1>
-        <div className="form-group">
+        <div className="form-group text-white">
           <label>Name</label>
           <input
             type="text"
@@ -78,7 +78,7 @@ function StudentComponent() {
             onChange={(event) => setName(event.target.value)}
           />
         </div>
-        <div className="form-group">
+        <div className="form-group text-white">
           <label>College</label>
           <input
             type="text"
@@ -87,7 +87,7 @@ function StudentComponent() {
             onChange={(event) => setCollege(event.target.value)}
           />
         </div>
-        <div className="form-group">
+        <div className="form-group text-white">
           <label>Department</label>
           <input
             type="text"
@@ -96,7 +96,7 @@ function StudentComponent() {
             onChange={(event) => setDept(event.target.value)}
           />
         </div>
-        <div className="form-group">
+        <div className="form-group text-white">
           <label>Year</label>
           <input
             type="number"
@@ -114,16 +114,16 @@ function StudentComponent() {
             onChange={(event) => setEmail(event.target.value)}
           />
         </div> */}
-        <div className="form-group">
-          <label>Phone Number</label>
-          <input
-            type="text"
-            className="py-2 px-3 rounded-md border bg-transparent text-white w-full"
-            value={phNo}
-            onChange={(event) => setPhNo(event.target.value)}
-          />
-        </div>
-        <div className="form-group">
+        <div className="form-group text-white">
+            <label>Phone Number</label>
+            <input
+              type="text"
+              className="py-2 px-3 rounded-md border bg-transparent text-white w-full"
+              value={`+91 ${phNo}`}
+              onChange={(event) => setPhNo(event.target.value.replace('+91 ', ''))}
+            />
+          </div>
+        <div className="form-group text-white">
           <label>ID Card (Optional)</label>
           <input
             type="file"
