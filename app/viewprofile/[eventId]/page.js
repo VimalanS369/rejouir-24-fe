@@ -9,6 +9,7 @@ const EventDetail = () => {
   const [event, setEvent] = useState(null);
   const [eventId, setEventId] = useState(null);
   const uid = localStorage.getItem("user_id");
+  const storedUserName = localStorage.getItem('user_name');
 
   useEffect(() => {
     const pathParts = window.location.pathname.split('/');
@@ -90,7 +91,8 @@ const EventDetail = () => {
               <p className="text-lg font-semibold text-black">Paid: <span className='text-xl font-semibold text-red-900'>{event.registration.is_paid ? "Yes" : "No"}</span></p>
               <p className="text-lg font-semibold text-black">Registered At: <span className='text-xl font-semibold text-red-900'>{event.registration.registered_at}</span></p>
               <p className="text-lg font-semibold text-black">Team Event: <span className='text-xl font-semibold text-red-900'>{event.registration.event.is_team ? "Yes" : "No"}</span></p>
-              {event.registration.event.is_team && (
+              {/* Conditionally render the "Add Team Member" button */}
+              {event.registration.event.is_team && storedUserName === event.team.team_lead.name && (
                 <motion.button
                   onClick={() => handleAddTeamMember(event.registration.event.title, event.registration.event.id)}
                   whileHover={{ scale: 1.05 }}
