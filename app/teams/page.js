@@ -12,6 +12,10 @@ function TeamComponent() {
   const [eventName, setEventName] = useState('');
   const [eventId, setEventId] = useState('');
 
+  const [studentsData, setStudentsData] = useState([]);
+  const [selectedTeamMembers, setSelectedTeamMembers] = useState([]);
+
+
   useEffect(() => {
     const currentUrl = window.location.href;
     const urlSearchParams = new URLSearchParams(currentUrl.split('?')[1]);
@@ -59,6 +63,7 @@ function TeamComponent() {
       });
 
       const studentsData = await studentsResponse.json();
+      setStudentsData(studentsData);
       const studentNames = studentsData.map((student) => student.name);
       setStudentSuggestions(studentNames);
     } catch (err) {
@@ -72,12 +77,12 @@ function TeamComponent() {
     const uid = localStorage.getItem('user_id');
 
     try {
-      const formattedTeamMembers = teamMembers.map((name) => ({ name }));
+      const formattedTeamMembers = selectedTeamMembers.map((name) => ({ name }));
       const teamData = {
         team_member: formattedTeamMembers,
       };
 
-      await fetch(`http://127.0.0.1:8000/add-team-member/${storedTeamID}/`, {
+      const response = await fetch(`http://127.0.0.1:8000/add-team-member/${storedTeamID}/`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -85,6 +90,18 @@ function TeamComponent() {
         },
         body: JSON.stringify(teamData),
       });
+
+      if (!response.ok) {
+        // Check for specific status codes and handle accordingly
+        if (response.status === 404) {
+          alert('Student not found. Please check the entered names.');
+        } else if (response.status === 500) {
+          alert('Failed to create team. Internal server error.');
+        } else {
+          alert('Failed to create team. Unknown error.');
+        }
+        return;
+      }
 
       alert('Team Created Successfully');
       setTeamLead('');
@@ -94,9 +111,42 @@ function TeamComponent() {
     }
   }
 
-  function handleTeamMembersChange(values) {
-    setTeamMembers(values);
+  function handleTeamMembersChange(event) {
+    const value = event.target.value;
+  
+    // Filter the suggestions to match the input value
+    const filteredSuggestions = studentSuggestions.filter((name) =>
+      name.toLowerCase().includes(value.toLowerCase())
+    );
+  
+    // Update the suggestions
+    setStudentSuggestions(filteredSuggestions);
+  
+    // Update the input field
+    setTeamMembers(value);
+  
+    // Check if the input matches a suggestion exactly
+    const matchedSuggestion = studentSuggestions.find(
+      (name) => name.toLowerCase() === value.toLowerCase()
+    );
+  
+    if (matchedSuggestion && matchedSuggestion.toLowerCase() === value.toLowerCase()) {
+      // Clear the input field
+      setTeamMembers('');
+  
+      // Append the selected member to the array
+      setSelectedTeamMembers((prevMembers) => [...prevMembers, matchedSuggestion]);
+  
+      // Filter the suggestions to exclude the selected member
+      setStudentSuggestions((prevSuggestions) =>
+        prevSuggestions.filter((name) => name !== matchedSuggestion)
+      );
+    } else if (value === '') {
+      // If input value is empty, reset suggestions to the original list
+      setStudentSuggestions(studentsData.map((student) => student.name));
+    }
   }
+  
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -140,11 +190,20 @@ function TeamComponent() {
               </div>
               <div className="mb-4">
                 <label className="block text-lg font-semibold mb-2">Team Members</label>
+
+                <div className="flex flex-wrap mb-2">
+                  {selectedTeamMembers.map((member, index) => (
+                    <div key={index} className="bg-blue-500 text-white rounded-md p-2 m-1">
+                      {member}
+                    </div>
+                  ))}
+                </div>
+
                 <input
                   type="text"
                   className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500 text-black bg-white"
                   value={teamMembers}
-                  onChange={(e) => handleTeamMembersChange(e.target.value.split(','))}
+                  onChange={(event) => handleTeamMembersChange(event)}
                   list="studentSuggestions"
                   multiple
                 />
