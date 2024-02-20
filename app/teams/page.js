@@ -11,9 +11,11 @@ function TeamComponent() {
   const [storedTeamID, setStoredTeamID] = useState('');
   const [eventName, setEventName] = useState('');
   const [eventId, setEventId] = useState('');
+  const [regID, setRegID]=useState('');
 
   const [studentsData, setStudentsData] = useState([]);
   const [selectedTeamMembers, setSelectedTeamMembers] = useState([]);
+  const [teamRegDetail, setTeamRegDetail] = useState(null);
 
 
   useEffect(() => {
@@ -25,6 +27,7 @@ function TeamComponent() {
     if (newEventName !== eventName || newEventId !== eventId) {
       setEventName(newEventName);
       setEventId(newEventId);
+      console.log("Event ID",newEventId);
 
       const authToken = localStorage.getItem('authToken');
       const uid = localStorage.getItem('user_id');
@@ -37,6 +40,7 @@ function TeamComponent() {
       })
         .then((response) => response.json())
         .then((data) => {
+          console.log("team data",data);
           const teamID = data.id;
           console.log("team id",teamID)
           localStorage.setItem('teamData', JSON.stringify(teamID));
@@ -51,6 +55,35 @@ function TeamComponent() {
       setTeamLead(storedUserName);
     }
   }, [eventName, eventId]);
+
+  useEffect(() => {
+    if (storedTeamID) {
+      fetchTeamRegDetail(storedTeamID);
+    }
+  }, [storedTeamID]);
+
+  async function fetchTeamRegDetail(teamID) {
+    try {
+      const authToken = localStorage.getItem('authToken');
+      const response = await fetch(`http://127.0.0.1:8000/team-reg-detail/${teamID}/`, {
+        method: 'GET',
+        headers: {
+          Authorization: `Token ${authToken}`,
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setRegID(data.id);
+        console.log("reg id",regID);
+        setTeamRegDetail(data);
+      } else {
+        console.error('Failed to fetch team registration detail');
+      }
+    } catch (error) {
+      console.error('Failed to fetch team registration detail:', error);
+    }
+  }
 
   async function fetchStudents(teamID) {
     try {
@@ -104,6 +137,7 @@ function TeamComponent() {
       }
 
       alert('Team Created Successfully');
+      window.location.href = `/viewprofile/${regID}`;
       setTeamLead('');
       setTeamMembers([]);
     } catch (err) {
