@@ -7,7 +7,7 @@
 import { easeIn, motion } from 'framer-motion';
 import { useEffect } from 'react';
 import styles from '../styles';
-import { staggerContainer } from '../utils/motion';
+import { staggerContainer, textVariant } from '../utils/motion';
 
 
 const Hero = () => {
@@ -29,7 +29,7 @@ const Hero = () => {
       const translateYL4 = scrollPosition / 5; // Adjusted vertical translation for L4
       const rotationL1 = scrollPosition / 25;
 
-      document.getElementById('L2').style.transform = `scale(${scaleL1})`;
+      //document.getElementById('L2').style.transform = `scale(${scaleL1})`;
       document.getElementById('L1').style.transform = `scale(${scaleL2}) rotate(${rotationL1}deg)`;
       document.getElementById('L3').style.transform = `scale(${scaleL3}) translateX(${scrollPosition / 5}px)`;
       document.getElementById('L4').style.transform = `scale(${scaleL4}) translateX(-${translateXL4}px) translateY(-${translateYL4}px)`; // Apply scale and translations to L4
@@ -42,8 +42,8 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className={`${styles.yPaddings} ${styles.fullScreen} flex flex-col justify-center items-center z-0 relative`}>
-
+    <section className={`${styles.yPaddings} ${styles.fullScreen} flex flex-col justify-center items-center z-5 relative`}>
+      
       <motion.div
         variants={staggerContainer}
         initial="hidden"
@@ -58,7 +58,7 @@ const Hero = () => {
           className="absolute z-5 w-1/2 md:w-1/4 left-0 bottom-[-100px] md:bottom-[50px] lg:bottom-[200px] xl:left-[-300px]"
         >
           <img
-            src="/tcherryblossom.svg"
+            src="/cherryblossom.svg"
             id="L4"
             alt="Image 4"
             className="w-full "
@@ -66,27 +66,24 @@ const Hero = () => {
           />
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, scale: 0, rotate: -90 }} animate={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.3 }}
-          className="relative z-10  flex-col items-center blur-[2px]"
+        <motion.div initial={{ opacity: 1, scale: 0, rotate: -90 }} animate={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.3 }}
+          className="relative z-5 flex-col items-center"
         >
           <img
-            src="/kkoi.svg"
+            src="/rejouirlogo2.png"
             id="L1"
             alt="Image 1"
-            className="w-full scale-[70%] md:scale-[30%]"
-
+            className="w-full scale-[30%] md:scale-[30%]"
           />
         </motion.div>
-
       </motion.div>
-
+      
       <motion.div
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 20 }}
         transition={{ duration: 0.3, ease: easeIn }}
         className="absolute z-5 w-1/2 md:w-1/4 right-0 top-0"
       >
-
         <img
           src="/cherryblossom.svg"
           id="L3"
@@ -95,36 +92,6 @@ const Hero = () => {
           style={{ width: '200vw' }}
         />
       </motion.div>
-
-      <motion.div className=" absolute z-5 scale-[60%] md:scale-[30%] flex-col items-center ">
-        <motion.img
-          src="/darkredcircle.svg"
-          id="L2"
-          alt="Image 2"
-          className="w-full "
-          initial={{ opacity: 0, scale: 1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3, ease: easeIn }}
-          style={{ width: '200vw' }}
-        />
-
-      </motion.div>
-      <motion.div className="absolute z-10 scale-[60%] md:scale-[30%] flex-col items-center invert">
-        <motion.img
-          src="/Rejouir logo red dotwquote.svg"
-          id="L2"
-          alt="Image 2"
-          className="w-full "
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 2 }}
-          transition={{ duration: 0.3 }}
-          style={{ width: '200vw' }}
-        />
-
-      </motion.div>
-
-      <motion.div />
-
     </section>
   );
 };

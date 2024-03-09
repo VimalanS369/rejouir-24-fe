@@ -4,27 +4,27 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../../utils/motion';
 import styles from '../../styles';
-import { exploreWorlds } from '../../constants';
 import { staggerContainer } from '../../utils/motion';
 import { Navbar, TitleText } from '../../components';
-import { Router, useHref} from 'react-router-dom';
 import { useRouter } from 'next/navigation';
 
 const Register = () => {
   const router = useRouter();
   const navigateToCultural = () => {
-    router.push('/events/category/Cultural');}
+    router.push('/events/category/Day3');
+  }
 
   const navigateToTechnical = () => {
-    router.push('/events/category/Technical');}
+    router.push('/events/category/Day1');
+  }
 
   const navigateToNontechnical = () => {
-    router.push('/events/category/Non-Technical');}
-  
+    router.push('/events/category/Day2');
+  }
+
 
   return (
-    <>
-    <section className={`${styles.paddings}` } id="explore">
+    <section className={`${styles.paddings}`} id="explore">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
@@ -42,12 +42,12 @@ const Register = () => {
               onClick={navigateToTechnical}
             >
               <img
-                src="/planet-03.png"
+                src="/card9.jpg"
                 alt="cult-card"
                 className="absolute w-full h-full object-cover rounded-[24px]"
               />
-              <h3 className="font-semibold sm:text-[26px] text-[18px] text-white absolute z-0 lg:bottom-20 lg:rotate-[-90deg] lg:origin-[0,0]">
-                Technical
+              <h3 className="font-semibold sm:text-[30px] text-[18px] text-white absolute z-0 lg:top-20 lg:rotate-[-90deg] lg:origin-[0,0] left-5 sm:left-auto">
+                Day 1
               </h3>
             </motion.div>
             <motion.div
@@ -58,12 +58,12 @@ const Register = () => {
               onClick={navigateToNontechnical}
             >
               <img
-                src="/planet-02.png"
+                src="/card8.jpg"
                 alt="cult-card"
                 className="absolute w-full h-full object-cover rounded-[24px]"
               />
-              <h3 className="font-semibold sm:text-[26px] text-[18px] text-white absolute z-0 lg:bottom-20 lg:rotate-[-90deg] lg:origin-[0,0]">
-                Non-Technical
+              <h3 className="font-semibold sm:text-[30px] text-[18px] text-white absolute z-0 lg:top-20 lg:rotate-[-90deg] lg:origin-[0,0] left-5 sm:left-auto">
+                Day 2
               </h3>
             </motion.div>
             <motion.div
@@ -74,12 +74,12 @@ const Register = () => {
               onClick={navigateToCultural}
             >
               <img
-                src="/planet-03.png"
+                src="/card6.jpg"
                 alt="cult-card"
                 className="absolute w-full h-full object-cover rounded-[24px]"
               />
-              <h3 className="font-semibold sm:text-[26px] text-[18px] text-white absolute z-0 lg:bottom-20 lg:rotate-[-90deg] lg:origin-[0,0]">
-                Cultural
+              <h3 className="font-semibold sm:text-[30px] text-[18px] text-white absolute z-0 lg:top-20 lg:rotate-[-90deg] lg:origin-[0,0] left-5 sm:left-auto">
+                Day 3
               </h3>
             </motion.div>
             
@@ -87,7 +87,6 @@ const Register = () => {
         </div>
       </motion.div>
     </section>
-    </>
   );
 };
 

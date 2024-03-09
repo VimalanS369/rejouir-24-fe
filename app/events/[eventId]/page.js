@@ -98,40 +98,32 @@ const EventDetail = () => {
         >
           {event ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="col-span-1">
-                <motion.figure
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <img src={`${event.poster}`} alt={event.title} className="w-full" />
-                </motion.figure>
-              </div>
-              <div className="col-span-1">
-                <h2 className="text-xl py-2">Event Name: {event.title}</h2>
-                <p className="text-lg py-2">Category: {event.category}</p>
-                <p className="text-lg py-2">Date: {event.date}</p>
-                <p className="text-lg py-2">Registration fee: {event.reg_fee}</p>
-                <p className="text-lg py-2">Venue: {event.venue}</p>
-              </div>
-              <div className="col-span-2">
-                <div className="text-lg text-white" style={{ wordWrap: 'break-word' }} dangerouslySetInnerHTML={{ __html: event.rules }}></div>
-              </div>
-              <div className="col-span-2">
-                <button onClick={handleRegistration} className="py-2 px-4 bg-red-700 hover:bg-red-800 text-white rounded-md w-full">Register</button>
-              </div>
+            <div className="col-span-2 md:col-span-1">
+              <motion.figure
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <img src={`${event.poster}`} alt={event.title} className="w-full" />
+              </motion.figure>
             </div>
+            <div className="col-span-1">
+              <h2 className="text-xl text-black py-2">Event Name: {event.title}</h2>
+              <p className="text-lg text-black py-2">Category: {event.category}</p>
+              <p className="text-lg text-black py-2">Date: {event.date}</p>
+              <p className="text-lg text-black py-2">Registration fee: {event.reg_fee}</p>
+              <p className="text-lg text-black py-2">Venue: {event.venue}</p>
+            </div>
+            <div className="col-span-2">
+              <div className="text-lg text-black" style={{ wordWrap: 'break-word' }} dangerouslySetInnerHTML={{ __html: event.rules }}></div>
+            </div>
+            <div className="col-span-2">
+              <button onClick={handleRegistration} className="py-2 px-4 bg-red-700 hover:bg-red-800 text-white rounded-md w-full">Register</button>
+            </div>
+          </div>
+          
           ) : (
             <p>Loading event details...</p>
-          )}
-          {showSuccessPopup && (
-            <div className="bg-green-500 text-white font-bold p-2 rounded fixed top-4 right-4">
-              Registered. Complete the payment in your{' '}
-              <a href="/viewprofile" className="text-red-500 hover:underline">
-                Profile page
-              </a>{' '}
-              for successful registration
-            </div>
           )}
 
         </motion.div>

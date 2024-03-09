@@ -10,7 +10,6 @@ import { TitleText2 } from '../components/CustomTexts';
 
 const About = () => (
   <section className={`${styles.paddings} relative z-10`}>
-
     <motion.div
       variants={staggerContainer}
       initial="hidden"

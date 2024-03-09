@@ -138,7 +138,7 @@ function StudentDetails() {
             key={event.id}
             className={`relative bg-white bg-opacity-20 p-4 rounded-lg mb-4 cursor-pointer transition-colors duration-300 ${index % 2 === 0
               ? "hover:bg-red-800 hover:bg-opacity-90"
-              : "hover:bg-black hover:bg-opacity-90"
+              : "hover:bg-blue-900 hover:bg-opacity-90"
               }`}
           >
             <Link key={event.id} href={`/viewprofile/${event.id}`}>
@@ -156,10 +156,10 @@ function StudentDetails() {
             <div className="text-sm text-gray-400 mt-2 flex justify-end">
               <ul>
                 {event.is_paid ? (
-                  <li className="text-white font-bold">Paid</li>
+                  <li className="text-white font-bold text-lg">Paid</li>
                 ) : (
                   <li className="text-sm text-black font-bold mt-2 bg-red-500 py-1 px-4 rounded-md hover:bg-red-600">
-                    <Link href={`https://forms.gle/wuBCrrzEH3WqvqtHA`} >
+                    <Link href={`https://forms.gle/VsYjACo252jWCZbC8`} >
                       Pay for event
                     </Link>
                   </li>

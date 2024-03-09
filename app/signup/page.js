@@ -52,7 +52,7 @@ const Signup = () => {
       initial="hidden"
       animate="show"
       variants={staggerContainer}
-      className="flex justify-center items-center bg-primary-black h-screen "
+      className="flex justify-center items-center bg-primary-black h-screen z-5 relative"
     >
 
       <div className="flex flex-col md:flex-row items-center justify-center md:justify-between relative w-3/4 m-5">
@@ -68,11 +68,11 @@ const Signup = () => {
           variants={fadeIn('up', 'tween', 0, 0.5)}
           className="relative w-full md:w-1/2 p-[30px] py-[70px] ml-[0px]   bg-black bg-opacity-30 rounded-xl space-y-6 md:ml-[50%] z-1"
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 text-center">
             SIGNUP
           </h1>
           <label
-            className="py-2 px-1 bg-transparent text-white w-full"
+            className="py-2 px-1 bg-transparent text-black w-full"
           >Email
           </label>
           <input
@@ -81,11 +81,11 @@ const Signup = () => {
             placeholder="Your Email"
             value={userDetails.email}
             onChange={handleChange}
-            className="py-2 px-3 rounded-md border bg-transparent text-white w-full"
+            className="py-2 px-3 rounded-md border bg-transparent text-black w-full"
             required
           />
           <label
-            className="py-5 px-1 pt-3 bg-transparent text-white w-full top-5"
+            className="py-5 px-1 pt-3 bg-transparent text-black w-full top-5"
           >Password
           </label>
           <input
@@ -94,29 +94,29 @@ const Signup = () => {
             placeholder="Your Password"
             value={userDetails.password}
             onChange={handleChange}
-            className="py-2 px-3 rounded-md border bg-transparent text-white w-full"
+            className="py-2 px-3 rounded-md border bg-transparent text-black w-full"
             required
           />
           <label 
-            className="py-5 px-1 pt-3 bg-transparent text-white w-full top-5">Confirm Password</label>
+            className="py-5 px-1 pt-3 bg-transparent text-black w-full top-5">Confirm Password</label>
           <input
             type="password"
             name="confirmPassword"
             placeholder="Confirm Password"
             value={confirmPassword}
             onChange={handleConfirmPasswordChange}
-            className="py-2 px-3 rounded-md border bg-transparent text-white w-full"
+            className="py-2 px-3 rounded-md border bg-transparent text-black w-full"
             required
           />
           <button
             type="submit"
-            className="py-2 px-4 bg-fire-engine-red hover:bg-red-800 text-white rounded-lg w-full"
+            className="py-2 px-4 bg-fire-engine-red hover:bg-red-800 text-black rounded-lg w-full"
            
           >
-            Login
+            Register
           </button>
           <div className="w-full text-center mt-8">
-            <p className="text-sm text-white">Already Have an account?<a href="/login" className="text-sm text-white font-bold ml-4">Login</a>
+            <p className="text-sm text-black">Already Have an account?<a href="/login" className="text-sm text-black font-bold ml-4">Login</a>
             </p>
           </div>
         </motion.form>

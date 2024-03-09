@@ -1,8 +1,8 @@
 const Head = () => (
   <>
-    <title>Rejouir</title>
+    <title>Rejouir '24</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="/icon_finale.ico" />
+    <link rel="icon" href="/rejouirlogo1.ico" />
 
   </>
 );

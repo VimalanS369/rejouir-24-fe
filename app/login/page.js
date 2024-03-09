@@ -29,7 +29,7 @@ const Login = () => {
       localStorage.setItem('user_name', uname);
 
       if (response.data.success) {
-        // Login successful, navigate to home page with the user's details
+        
         router.push('/');
         const authToken = response.data.token;
         console.log('after login Token:', authToken);
@@ -79,7 +79,7 @@ const Login = () => {
             placeholder="Your Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="py-2 px-3 rounded-md border bg-transparent text-white w-full"
+            className="py-2 px-3 rounded-md border bg-transparent text-black w-full"
             required
           />
           <label 
@@ -90,7 +90,7 @@ const Login = () => {
             placeholder="Your Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="py-2 px-3 rounded-md border bg-transparent text-white w-full"
+            className="py-2 px-3 rounded-md border bg-transparent text-black w-full"
             required
           />
           <button
@@ -102,7 +102,7 @@ const Login = () => {
           </button>
           <div className="w-full text-center mt-8">
             <a href="#forgot-password" className="text-sm text-black">Forgot password?</a>
-            <a href="#sign-up" className="text-sm text-black ml-4">Sign up</a>
+            <a href="/signup" className="text-sm text-black ml-4">Sign up</a>
           </div>
         </motion.form>
       </div>
