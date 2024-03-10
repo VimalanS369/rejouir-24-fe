@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { TitleText3 } from '../components/CustomTexts';
+import { TitleText2 } from '../components/CustomTexts';
 
 import styles from '../styles';
 import { fadeIn, staggerContainer } from '../utils/motion';
@@ -15,21 +15,27 @@ const WhenandWhere = () => (
       viewport={{ once: false, amount: 0.25 }}
       className={`${styles.innerWidth} mx-auto ${styles.flexCenter} flex-col`}
     >
-      <TitleText3
-        title1={<>The Drums of </>}
-        title2={<>Celebration</>}
+      <TitleText2
+        title1={<>Chief </>}
+        title2={<>Guest</>}
       />
       <div className="flex flex-col-reverse md:flex-row-reverse items-center justify-center md:justify-between relative">
-        <div className="absolute opacity-[20%] md:opacity-[100%] md:absolute md:top-0 md:left-[-50px] w-full h-full flex items-left justify-start">
-          <motion.img variants={fadeIn('right', 'tween', 1, 0.5)} src="./branchbg.svg" className="h-[100%] w-1/2 absolute z-10" />
-          <motion.img variants={fadeIn('up', 'tween', 0.5, 0.5)} src="./backround.svg" className="absolute h-[100%] w-1/4 z-7" />
-        </div>
+
         <motion.p
           variants={fadeIn('right', 'tween', 0.2, 1)}
-          className="mt-[8px] font-normal text-[14px] sm:text-[20px] lg:text-[32px] text-center text-secondary-white md:text-left md:w-[55%] z-0"
-        >
-        Channeling Joyboy's spirit, <span className="font-extrabold font-title space-between-4 text-redborder-r-4 transition-colors duration-300 hover:text-fire-engine-red">REJOUIR 2024</span> ignites a three-day celebration where youthful hearts dance to the beat of innovation. Forget academic burdens - immerse in cultural vibrancy and cutting-edge tech showcases. More than an event, it's a nationwide pilgrimage for students, united by the magic of creativity, competition, and shared dreams. Here, passion finds its voice in a thousand echoes,  reminding us that<span className="font-extrabold font-family-sans text-red border-r-4 text-black"> the best cure for humanity's ills is the simple act of celebrating together.</span>
+          className="mt-[8px] font-normal text-[14px] sm:text-[20px] lg:text-[32px] text-center text-secondary-white md:text-left md:w-[50%] z-0"
+        ><span className="font-extrabold font-title space-between-4 text-redborder-r-4 transition-colors duration-300 hover:text-fire-engine-red">GV Prakash Kumar </span>
+          , renowned musician, composer, and actor, graces us with his presence as the esteemed chief guest for our upcoming cultural extravaganza. His multifaceted talent and remarkable contributions to the world of music and cinema make him a cherished figure in the entertainment industry. Join us in celebrating the presence of this musical maestro at our cultural extravaganza!
         </motion.p>
+        <div className="md:w-1/2 md:order-1 flex items-left justify-start max-h-[800px] max-w-[600px] md:pr-12">
+          <motion.img
+            src="/gvp2.png"
+            alt="Example Image"
+            className="md:w-full h-auto md:object-cover"
+            variants={fadeIn('up', 'tween', 0.5, 0.5)}
+          />
+        </div>
+
       </div>
     </motion.div>
   </section>

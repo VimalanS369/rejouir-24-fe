@@ -29,12 +29,14 @@ const Footer = () => (
 
           <div className="flex gap-4">
             {socials.map((social) => (
+              <a href='https://www.instagram.com/rejouir_ptu?igsh=dGhkYWxzZTFpZ3N2'>
               <img
                 key={social.name}
                 src={social.url}
                 alt={social.name}
                 className="w-[24px] h-[24px] object-contain cursor-pointer filter invert"
               />
+              </a>
             ))}
           </div>
         </div>

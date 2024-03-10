@@ -134,7 +134,7 @@ function StudentComponent() {
         </div>
         <div>
           <button
-            className="py-4 my-4 px-4 bg-[rgb(60,44,139)] hover:bg-[rgb(48,35,112)] text-white rounded-lg w-full"
+            className="py-4 my-4 px-4 bg-fire-engine-red hover:bg-red-800 text-black rounded-lg w-full"
             onClick={save}
           >
             Register
