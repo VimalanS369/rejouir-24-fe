@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { motion } from 'framer-motion';
 import styles from '../styles';
 // Using an array of objects to represent contributors info

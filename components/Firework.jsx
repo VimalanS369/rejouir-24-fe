@@ -1,7 +1,7 @@
 // components/Firework.js
 
 import { useEffect } from 'react';
-import '../styles/firework.css'
+import '../styles/firework.css';
 const Firework = () => {
   useEffect(() => {
     const interval = setInterval(() => {
