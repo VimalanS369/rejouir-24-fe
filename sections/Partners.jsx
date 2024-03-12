@@ -27,6 +27,33 @@ const Partners = () => (
           />
         </motion.div>
       </motion.div>
+      <div className="flex flex-col items-center py-2">
+        <h4 className="text-red-900 text-2xl font-bold tracking-wide mb-4 text-center">
+          MEDIA PARTNERS
+        </h4>
+
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4"
+        >
+          <div className="flex flex-col items-center space-y-2">
+            <a href="https://www.youtube.com/@rainbowtvpondicherry4804" className="text-white-500 hover:underline hover:text-white-600 py-2">
+              <motion.img
+                src="rainbow.png"
+                alt="interjet"
+                className="w-20 sm:w-64 md:w-40 h-auto object-contain"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                variants={fadeIn('up', 'tween', 0.2, 1)}
+              />
+            </a>
+            <p className="text-center text-red-800">RAINBOW TV</p>
+          </div>
+        </motion.div>
+      </div>
       <div className="flex flex-col items-center mt-8 py-3">
         <h4 className="text-red-900 text-2xl font-bold tracking-wide mb-4 text-center">
           SOCIAL MEDIA PARTNERS
