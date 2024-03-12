@@ -19,7 +19,7 @@ const EventDetail = () => {
 
     const fetchEventDetails = async () => {
       try {
-        const response = await axios.get(`http://127.0.0.1:8000/event-detail/${eventIdFromPath}/`);
+        const response = await axios.get(`https://api.rejouirptu.in/event-detail/${eventIdFromPath}/`);
         console.log("event details  :", response.data);
         const eventData = response.data;
         setEvent(eventData);
@@ -54,7 +54,7 @@ const EventDetail = () => {
     try {
       const authToken = localStorage.getItem('authToken');
 
-      const response = await axios.post('http://127.0.0.1:8000/register/', registrationData, {
+      const response = await axios.post('https://api.rejouirptu.in/register/', registrationData, {
         headers: {
           Authorization: `Token ${authToken}`,
           'Content-Type': 'application/json',

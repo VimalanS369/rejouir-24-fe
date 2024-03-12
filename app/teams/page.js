@@ -32,7 +32,7 @@ function TeamComponent() {
       const authToken = localStorage.getItem('authToken');
       const uid = localStorage.getItem('user_id');
 
-      fetch(`http://127.0.0.1:8000/event-team-lead/${uid}/${newEventId}/`, {
+      fetch(`https://api.rejouirptu.in/event-team-lead/${uid}/${newEventId}/`, {
         method: 'GET',
         headers: {
           Authorization: `Token ${authToken}`,
@@ -65,7 +65,7 @@ function TeamComponent() {
   async function fetchTeamRegDetail(teamID) {
     try {
       const authToken = localStorage.getItem('authToken');
-      const response = await fetch(`http://127.0.0.1:8000/team-reg-detail/${teamID}/`, {
+      const response = await fetch(`https://api.rejouirptu.in/team-reg-detail/${teamID}/`, {
         method: 'GET',
         headers: {
           Authorization: `Token ${authToken}`,
@@ -88,7 +88,7 @@ function TeamComponent() {
   async function fetchStudents(teamID) {
     try {
       const authToken = localStorage.getItem('authToken');
-      const studentsResponse = await fetch(`http://127.0.0.1:8000/add-team-member/${teamID}/`, {
+      const studentsResponse = await fetch(`https://api.rejouirptu.in/add-team-member/${teamID}/`, {
         method: 'GET',
         headers: {
           Authorization: `Token ${authToken}`,
@@ -115,7 +115,7 @@ function TeamComponent() {
         team_member: formattedTeamMembers,
       };
 
-      const response = await fetch(`http://127.0.0.1:8000/add-team-member/${storedTeamID}/`, {
+      const response = await fetch(`https://api.rejouirptu.in/add-team-member/${storedTeamID}/`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -36,7 +36,7 @@ const Signup = () => {
     console.log(userDetails);
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/signup/', userDetails);
+      const response = await axios.post('https://api.rejouirptu.in/signup/', userDetails);
       console.log('Registration successful:', response.data);
       alert("Registration successful. Login to continue");
       setShowPopup(true);

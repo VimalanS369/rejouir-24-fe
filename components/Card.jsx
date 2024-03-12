@@ -7,7 +7,7 @@ const Card = ({ event }) => {
   return (
     <div className="card w-full sm:w-59 md:w-80 lg:w-90 xl:w-59 2xl:w-80 bg-red-800 shadow-xl mx-3 my-4 p-0">
       <figure>
-        <img src={`http://127.0.0.1:8000/${event.banner}`} alt={event.title} />
+        <img src={`https://api.rejouirptu.in/${event.banner}`} alt={event.title} />
       </figure>
       <div className="card-body flex flex-col items-center">
         <h2 className="card-title text-center">{event.title}</h2>

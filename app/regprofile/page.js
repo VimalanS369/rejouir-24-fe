@@ -32,7 +32,7 @@ function StudentComponent() {
       formData.append("ph_no", phNo);
       formData.append("id_card", idCard);
 
-      await axios.post("http://127.0.0.1:8000/student/", formData, {
+      await axios.post("https://api.rejouirptu.in/student/", formData, {
         headers: {
           Authorization: `Token ${authToken}`,
           "Content-Type": "multipart/form-data",
