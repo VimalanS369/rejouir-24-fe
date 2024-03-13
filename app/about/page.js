@@ -1,3 +1,5 @@
+
+
 'use client';
 
 import { motion } from 'framer-motion';
@@ -135,8 +137,7 @@ const Page = () => (
         <div className="gradient-02 z-0 " />
         {developers.map(developer => (
 
-          <div className="relative max-w-md mx-auto md:max-w-2xl min-w-0 break-words text-white bg-slate-700 w-full shadow-lg rounded-xl mt-[100px] mb-[20px]">
-
+          <div className="relative max-w-md mx-auto md:max-w-2xl min-w-0 break-words text-white bg-red-900 w-full shadow-lg rounded-xl mt-[100px] mb-[20px]">
             <div className="px-6 py-4">
               <div className="flex flex-wrap justify-center">
                 <div className="w-full flex justify-center">
@@ -153,7 +154,7 @@ const Page = () => (
                       <i className="fas fa-map-marker-alt mr-2 text-white opacity-75"></i>{developer.year}
                     </div>
                     <div className="text-xs mt-0 mb-2 text-slate-400 font-bold uppercase">
-                      <i className="fas fa-map-marker-alt mr-2 text-white opacity-75"></i>{developer.role}
+                      <i className="mr-2 text-white opacity-75"></i>{developer.role}
                     </div>
                   </div>
                   <div className="flex flex-col items-center justify-center lg:flex-row lg:pt-4 pt-4 md:pt-8 pb-0 font-sm">
@@ -205,3 +206,6 @@ const Page = () => (
 );
 
 export default Page;
+
+
+
