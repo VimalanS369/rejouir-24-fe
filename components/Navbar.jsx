@@ -24,7 +24,7 @@ const Navbar = () => (
         </div>
       </div>
       <div class="navbar-center" >    
-        <img src="ptu-logo.png" class="h-20 w-22 max-w-full pr-4" alt="PTU Logo" />
+        <img src="/ptu-logo.png" class="h-20 w-22 max-w-full pr-4" alt="PTU Logo" />
         <a className="btn btn-ghost text-xl font-bold font-title hidden lg:block z-0" href="/" >PUDUCHERRY TECHNOLOGICAL UNIVERSITY</a>
         <a class="btn btn-ghost text-xl font-bold font-title lg:hidden">PTU</a>
       </div>
