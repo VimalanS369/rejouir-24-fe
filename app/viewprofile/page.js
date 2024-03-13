@@ -22,7 +22,7 @@ function StudentDetails() {
       async function fetchData() {
         try {
           const studentResponse = await axios.get(
-            `https://api.rejouirptu.in/student/${uid}/`
+            `http://127.0.0.1:8000/student/${uid}/`
           );
           setStudent(studentResponse.data);
           const uname = studentResponse.data.name;
@@ -33,7 +33,7 @@ function StudentDetails() {
           }
 
           const eventsResponse = await axios.get(
-            `https://api.rejouirptu.in/students/${uid}/events/`
+            `http://127.0.0.1:8000/students/${uid}/events/`
           );
           setEvents(eventsResponse.data);
         } catch (error) {
@@ -81,7 +81,7 @@ function StudentDetails() {
         >
           <div className="md:w-1/2 m-0 p-0">
             <img
-              src={student.id_card}
+              src='./rejouirlogo.png'
               alt="ID Card"
               style={{ maxWidth: "100%", height: "auto" }}
             />
