@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
@@ -28,23 +28,23 @@ const Event = () => {
   };
 
   const filteredEvents = events.filter(
-    (event) =>
-      event.category === 'Day1' &&
-      event.title.toLowerCase().includes(search.toLowerCase())
+    (event) => event.category === 'Day1'
+      && event.title.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
     <section className="flex flex-col justify-center items-center bg-primary-black h-full w-full pl-0 pr-6">
-      <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-5xl 2xl:text-6xl font-bold text-black mt-4 text-center md:py-2">
+      <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-5xl 2xl:text-6xl font-bold text-secondary-white mt-4 text-center md:py-2">
         Choose An Event
       </h1>
-      <div className="my-8 flex justify-center">
+      <div className="my-8 flex justify-center ">
         <input
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search for an event..."
-          className="p-2 w-full mx-auto"
+          
+          className="p-2 w-full sm:w-64 lg:w-96 rounded-md text-primary-black" // Adjust the width as needed for responsiveness
         />
       </div>
 
