@@ -12,31 +12,25 @@ const developers = [
     name: 'Vimalaadithan B S',
     image: 'vimal.jpg',
     year: 'IV Year',
-    // role: 'Secretary',
     link1: 'https://github.com/vimal-11',
     link2: 'https://www.linkedin.com/in/vimal11/',
     link3: 'https://www.instagram.com/_vimal._11/',
-    bio: `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).`,
   },
   {
     name: 'Laxman S',
     image: 'laxman.jpg',
     year: 'IV Year',
-    // role: 'Treasurer',
     link1: 'https://github.com/laxx1612/',
     link2: 'https://www.linkedin.com/in/laxman-s-326555230/',
     link3: 'https://www.instagram.com/_._laxx/',
-    bio: `Another developer's bio goes here...`,
   },
   {
     name: 'Vimalan S',
     image: 'vimalan.jpg',
     year: 'IV Year',
-    role: '',
     link1: 'https://github.com/VimalanS369',
     link2: 'https://www.linkedin.com/in/vimalan-s-6125861b1/',
     link3: 'https://www.instagram.com/vimalan_pdy/',
-    bio: `Another developer's bio goes here...`,
   },
 ];
 
@@ -133,7 +127,7 @@ const Page = () => (
           </div>
 
         </div>
-        <h2 className="text-4xl font-semibold text-center text-black my-8 mb-16 sm:text-4xl">Developers</h2>
+        <h2 className="text-4xl font-semibold text-center text-secondary-white my-8 mb-16 sm:text-4xl">Developers</h2>
         <div className="gradient-02 z-0 " />
         {developers.map(developer => (
 
@@ -149,13 +143,11 @@ const Page = () => (
                 </div>
                 <div className="w-full text-center mt-20">
                   <div className="text-center mt-2">
-                    <h3 className="text-2xl text-white font-bold leading-normal mb-1">{developer.name}</h3>
-                    <div className="text-xs mt-0 mb-2 text-slate-400 font-bold uppercase">
-                      <i className="fas fa-map-marker-alt mr-2 text-white opacity-75"></i>{developer.year}
+                    <h3 className="text-2xl text-primary-black font-bold leading-normal mb-1">{developer.name}</h3>
+                    <div className="text-xs mt-0 mb-2 text-primary-black font-bold uppercase">
+                      <i className=" mr-2 text-white opacity-75"></i>{developer.year}
                     </div>
-                    <div className="text-xs mt-0 mb-2 text-slate-400 font-bold uppercase">
-                      <i className="mr-2 text-white opacity-75"></i>{developer.role}
-                    </div>
+                    
                   </div>
                   <div className="flex flex-col items-center justify-center lg:flex-row lg:pt-4 pt-4 md:pt-8 pb-0 font-sm">
                     <div className="p-3 text-center flex justify-center items-center mb-2">
