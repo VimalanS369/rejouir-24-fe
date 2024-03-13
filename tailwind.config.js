@@ -24,9 +24,8 @@ module.exports = {
       fontFamily: {
         sans: ['-apple-system', 'BlinkMacSystemFont'],
         serif: ['Georgia', 'Cambria'],
-        //       'mono': ['SFMono-Regular', 'Menlo',],
         title: ['Japanese_3017', 'Arial'],
-        title2:['ProtestRevolution', 'Arial'],
+        title2: ['ProtestRevolution', 'Arial'],
         body: ['Josefin_Sans', 'sans-serif'],
       },
 

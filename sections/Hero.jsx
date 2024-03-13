@@ -13,8 +13,6 @@ import { staggerContainer, textVariant } from '../utils/motion';
 const Hero = () => {
   useEffect(() => {
     const handleScroll = () => {
-      
-
       // Determine the scale value based on screen size
       const screenSize = window.innerWidth;
 
