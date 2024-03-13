@@ -43,7 +43,8 @@ const Notifyinfo = () => {
         style={{ whiteSpace: 'nowrap' }} // Ensure text does not wrap to the next line
       >
         Check <span className="font-bold text-black-900">Guidelines</span> for successful registration. Bring college ID card compulsorily. 
-        Get your <span className="font-bold text-black-900">Gate Pass</span> by clicking <span className="font-bold text-black-900">Gate Pass Link</span> below
+        Get your <span className="font-bold text-black-900">Gate Pass</span> by clicking <span className="font-bold text-black-900">Gate Pass Link</span> below.
+        <span className="font-bold text-black-900"> PTU Students</span>doesn't require <span className="font-bold text-black-900">Gate Pass.</span>
       </motion.h4>
 
       <motion.div className="flex flex-row justify-between items-center">
