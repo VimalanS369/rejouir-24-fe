@@ -70,7 +70,7 @@ const Hero = () => {
           className="relative z-5 md:w-full flex-col items-center "
         >
           <img
-            src="/rejouirlogo2.webp"
+            src="/rejouir.svg"
             id="L0"
             alt="Hero"
             className="w-full scale-[80%] md:scale-[50%] xl:scale-[40%]"
