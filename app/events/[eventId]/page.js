@@ -67,11 +67,15 @@ const EventDetail = () => {
       }
     } catch (error) {
       if (error.response.status === 401) {
-        alert("You have already registered for this event.");
-      } else {
+        alert("Login in-order to register for the event.");
+      }
+      else if(error.response.status === 403){
         console.error('Error registering for the event:', error);
-        
-        alert("Have an REJOUIR profile in order to register for an event. Create a profile and continue.");
+        alert("Have an profile in order to register for an event. Create a profile and continue.");
+      }
+      else {
+        console.error('Error registering for the event:', error);
+        alert("Have an profile in order to register for an event. Create a profile and continue.");
       }
     }
   };
