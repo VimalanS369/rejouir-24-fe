@@ -81,7 +81,7 @@ function StudentDetails() {
         >
           <div className="md:w-1/2 m-0 p-0">
             <img
-              src={student.id_card}
+              src='./rejouirlogo1.png'
               alt="ID Card"
               style={{ maxWidth: "100%", height: "auto" }}
             />
