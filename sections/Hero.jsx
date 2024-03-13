@@ -21,16 +21,16 @@ const Hero = () => {
       const scaleL2Value = screenSize < 768 ? scaleL2Small : scaleL2Medium;
 
       const scrollPosition = window.scrollY;
-      //const scaleL1 = 1 + scrollPosition / 2000;
+      const scaleL1 = 1 + scrollPosition / 2000;
       const scaleL2 = scaleL2Value - scrollPosition / 20000;
       const scaleL3 = 1 - scrollPosition / 3000;
       const scaleL4 = 1 - scrollPosition / 3000; // Adjusted scale for L4
       const translateXL4 = scrollPosition / 5; // Adjusted horizontal translation for L4
       const translateYL4 = scrollPosition / 5; // Adjusted vertical translation for L4
-      //const rotationL1 = scrollPosition / 25;
+      const rotationL1 = scrollPosition / 25;
 
       //document.getElementById('L2').style.transform = `scale(${scaleL1})`;
-      //document.getElementById('L1').style.transform = `scale(${scaleL2}) rotate(${rotationL1}deg)`;
+      document.getElementById('L1').style.transform = `scale(${scaleL2}) rotate(${rotationL1}deg)`;
       document.getElementById('L3').style.transform = `scale(${scaleL3}) translateX(${scrollPosition / 5}px)`;
       document.getElementById('L4').style.transform = `scale(${scaleL4}) translateX(-${translateXL4}px) translateY(-${translateYL4}px)`; // Apply scale and translations to L4
     };
