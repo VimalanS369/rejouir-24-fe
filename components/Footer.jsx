@@ -23,7 +23,7 @@ const Footer = () => (
           <h4 className="font-extrabold text-[24px] text-secondary-white">
             REJOUIR
           </h4>
-          <a href="" className="font-normal text-[14px] text-secondary-white opacity-100">
+          <a href="/" className="font-normal text-[14px] text-secondary-white opacity-100">
             Made  with  ❤️   from  PTU
           </a>
 

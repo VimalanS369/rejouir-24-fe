@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { TitleText } from '../components';
 
 const Gallery = () => (
@@ -14,21 +15,21 @@ const Gallery = () => (
             <img
               alt="gallery1"
               className="block h-full w-full rounded-lg object-cover object-center hover:scale-[105%] transition-transform shadow-md hover:shadow-xl "
-              src='/gallery2.jpg'
+              src='/gallery2.webp'
             />
           </div>
           <div className="w-1/2 p-1 md:p-2">
             <img
               alt="gallery2"
               className="block h-full w-full rounded-lg object-cover object-center hover:scale-[105%] transition-transform shadow-md hover:shadow-xl "
-              src='/gallery7.jpg'
+              src='/gallery7.webp'
             />
           </div>
           <div className="w-full p-1 md:p-2">
             <img
               alt="gallery3"
               className="block h-full w-full rounded-lg object-cover object-center hover:scale-[105%] transition-transform shadow-md hover:shadow-xl "
-              src='/gallery9.jpg'
+              src='/gallery9.webp'
             />
           </div>
         </div>
@@ -37,21 +38,21 @@ const Gallery = () => (
             <img
               alt="gallery4"
               className="block h-full w-full rounded-lg object-cover object-center hover:scale-[105%] transition-transform shadow-md hover:shadow-xl "
-              src='/gallery1.jpg'
+              src='/gallery1.webp'
             />
           </div>
           <div className="w-1/2 p-1 md:p-2">
             <img
               alt="gallery5"
               className="block h-full w-full rounded-lg object-cover object-center hover:scale-[105%] transition-transform shadow-md hover:shadow-xl "
-              src='/gallery8.jpg'
+              src='/gallery8.webp'
             />
           </div>
           <div className="w-1/2 p-1 md:p-2">
             <img
               alt="gallery6"
               className="block h-full w-full rounded-lg object-cover object-center hover:scale-[105%] transition-transform shadow-md hover:shadow-xl "
-              src='/gallery6.jpg'
+              src='/gallery6.webp'
             />
           </div>
         </div>

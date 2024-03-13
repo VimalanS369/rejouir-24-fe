@@ -23,10 +23,10 @@ const Navbar = () => (
         </ul>
         </div>
       </div>
-      <div class="navbar-center" >    
-        <img src="/ptu-logo.png" class="h-20 w-22 max-w-full pr-4" alt="PTU Logo" />
+      <div className="navbar-center" >    
+        <img src="/ptu-logo.svg" className="h-20 w-22 max-w-full pr-4" alt="PTU Logo" />
         <a className="btn btn-ghost text-xl font-bold font-title hidden lg:block z-0" href="/" >PUDUCHERRY TECHNOLOGICAL UNIVERSITY</a>
-        <a class="btn btn-ghost text-xl font-bold font-title lg:hidden">PTU</a>
+        <a className="btn btn-ghost text-xl font-bold font-title lg:hidden">PTU</a>
       </div>
       <div className="navbar-end">
         

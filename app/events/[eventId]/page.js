@@ -36,7 +36,7 @@ const EventDetail = () => {
     };
 
     fetchEventDetails();
-  }, []);
+  }, [eventId]);
 
   useEffect(() => {
     if (registrationSuccess) {
@@ -72,7 +72,7 @@ const EventDetail = () => {
       else {
         console.error('Error registering for the event:', error);
         
-        alert("Have an ICON profile in order to register for an event. Create a profile and continue.");
+        alert("Have an REJOUIR profile in order to register for an event. Create a profile and continue.");
       }
     }
   };
