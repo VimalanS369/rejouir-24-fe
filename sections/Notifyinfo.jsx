@@ -42,10 +42,10 @@ const Notifyinfo = () => {
         className="text-center text-xl text-fire-engine-red pb-20 pt-3marquee"
         style={{ whiteSpace: 'nowrap' }} // Ensure text does not wrap to the next line
       >
-        Check <span className="font-bold text-black-900">Guidelines</span> for successful registration. Bring college ID card compulsorily. 
-        Get your <span className="font-bold text-black-900">Gate Pass</span> by clicking <span className="font-bold text-black-900">Gate Pass Link</span> below.
-        Even if participating in event, Gate Pass is mandatory.
-        <span className="font-bold text-black-900"> PTU Students</span> doesn't require <span className="font-bold text-black-900">Gate Pass.</span>
+        For successful registration, please Check <span className="font-bold text-black-900">Guidelines</span>. Physical College ID card is mandatory.
+        Get your Gate Pass by clicking the <span className="font-bold text-black-900">Gate Pass Link</span> below.
+        A Gate Pass is mandatory for everyone, even if you are participating in the event.
+        PTU Students are exempt from requiring a Gate Pass.
       </motion.h4>
 
       <motion.div className="flex flex-row justify-between items-center">

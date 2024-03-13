@@ -63,13 +63,12 @@ const EventDetail = () => {
 
       if (response) {
         setRegistrationSuccess(true);
-        alert("Registration Successful. Complete your payment in your Profile Page for successful registration.")
+        alert("Registration Successful. Complete your payment in your Profile Page for successful registration.");
       }
     } catch (error) {
       if (error.response.status === 401) {
         alert("You have already registered for this event.");
-      }
-      else {
+      } else {
         console.error('Error registering for the event:', error);
         
         alert("Have an REJOUIR profile in order to register for an event. Create a profile and continue.");
