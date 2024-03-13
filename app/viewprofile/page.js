@@ -22,7 +22,7 @@ function StudentDetails() {
       async function fetchData() {
         try {
           const studentResponse = await axios.get(
-            `http://api.rejouirptu.in/student/${uid}/`
+            `https://api.rejouirptu.in/student/${uid}/`
           );
           setStudent(studentResponse.data);
           const uname = studentResponse.data.name;
@@ -33,7 +33,7 @@ function StudentDetails() {
           }
 
           const eventsResponse = await axios.get(
-            `http://api.rejouirptu.in/students/${uid}/events/`
+            `https://api.rejouirptu.in/students/${uid}/events/`
           );
           setEvents(eventsResponse.data);
         } catch (error) {
