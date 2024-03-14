@@ -42,7 +42,7 @@ const Register = () => {
               onClick={navigateToTechnical}
             >
               <img
-                src="/card9.jpg"
+                src="/card9.webp"
                 alt="cult-card"
                 className="absolute w-full h-full object-cover rounded-[24px]"
               />
@@ -58,7 +58,7 @@ const Register = () => {
               onClick={navigateToNontechnical}
             >
               <img
-                src="/card8.jpg"
+                src="/card8.webp"
                 alt="cult-card"
                 className="absolute w-full h-full object-cover rounded-[24px]"
               />
@@ -74,7 +74,7 @@ const Register = () => {
               onClick={navigateToCultural}
             >
               <img
-                src="/card6.jpg"
+                src="/card6.webp"
                 alt="cult-card"
                 className="absolute w-full h-full object-cover rounded-[24px]"
               />
