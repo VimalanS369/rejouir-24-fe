@@ -2,22 +2,18 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-// import { useNavigate } from 'next/router';
 import { useRouter } from 'next/navigation';
 
 const EventDetail = () => {
   const [event, setEvent] = useState(null);
   const [eventId, setEventId] = useState(null);
   const uid = localStorage.getItem("user_id");
+  const router = useRouter();
 
   useEffect(() => {
-    const pathParts = window.location.pathname.split('/');
-    const eventIdFromPath = pathParts[pathParts.length - 1];
-    setEventId(eventIdFromPath);
-
     const fetchEventDetails = async () => {
       try {
-        const response = await axios.get(`https://api.rejouirptu.in/reg-detail/${eventIdFromPath}/`);
+        const response = await axios.get(`https://api.rejouirptu.in/reg-detail/${eventId}/`);
         const eventData = response.data;
         console.log(response.data);
         setEvent(eventData);
@@ -26,14 +22,15 @@ const EventDetail = () => {
       }
     };
 
-    fetchEventDetails();
-  }, []);
-  const router = useRouter();
-  const handleAddTeamMember = (eventName, eventId) => {
-    // Construct the URL for the /teams page with query parameters
-    const url = `/teams?eventName=${encodeURIComponent(eventName)}&eventId=${encodeURIComponent(eventId)}`;
+    const pathParts = window.location.pathname.split('/');
+    const eventIdFromPath = pathParts[pathParts.length - 1];
+    setEventId(eventIdFromPath);
 
-    // Use router.push to navigate to the new page with query parameters
+    fetchEventDetails();
+  }, [eventId]);
+
+  const handleAddTeamMember = (eventName, eventId) => {
+    const url = `/teams?eventName=${encodeURIComponent(eventName)}&eventId=${encodeURIComponent(eventId)}`;
     router.push(url);
   };
 

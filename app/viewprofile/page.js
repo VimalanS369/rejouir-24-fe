@@ -53,9 +53,9 @@ function StudentDetails() {
         variants={staggerContainer}
         className="flex justify-center items-center bg-primary-black overflow-hidden h-screen"
       >
-        <div class="font-bold text-black text-center text-lg">
+        <div className="font-bold text-black text-center text-lg">
           Profile not created and registered here -&nbsp;
-          <a href="/regprofile" class="text-bold text-red-800">
+          <a href="/regprofile" className="text-bold text-red-800">
             Create profile
           </a>
         </div>
