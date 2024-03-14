@@ -16,8 +16,8 @@ const WhenandWhere = () => (
       className={`${styles.innerWidth} mx-auto ${styles.flexCenter} flex-col`}
     >
       <TitleText2
-        title1={<>Chief </>}
-        title2={<>Guest</>}
+        title1={<>Guest of </>}
+        title2={<>Honor</>}
       />
       <div className="flex flex-col-reverse md:flex-row-reverse items-center justify-center md:justify-between relative">
 
@@ -25,7 +25,7 @@ const WhenandWhere = () => (
           variants={fadeIn('right', 'tween', 0.2, 1)}
           className="mt-[8px] font-normal text-[14px] sm:text-[20px] lg:text-[32px] text-center text-secondary-white md:text-left md:w-[50%] z-0"
         ><span className="font-extrabold font-title space-between-4 text-redborder-r-4 transition-colors duration-300 hover:text-fire-engine-red">GV Prakash Kumar </span>
-          , renowned musician, composer, and actor, graces us with his presence as the esteemed chief guest for our upcoming cultural extravaganza. His multifaceted talent and remarkable contributions to the world of music and cinema make him a cherished figure in the entertainment industry. Join us in celebrating the presence of this musical maestro at our cultural extravaganza!
+          , renowned musician, composer, and actor, graces us with his presence as the esteemed guest for our upcoming cultural extravaganza. His multifaceted talent and remarkable contributions to the world of music and cinema make him a cherished figure in the entertainment industry. Join us in celebrating the presence of this musical maestro at our cultural extravaganza!
         </motion.p>
         <div className="md:w-1/2 md:order-1 flex items-left justify-start max-h-[800px] max-w-[600px] md:pr-12">
           <motion.img
