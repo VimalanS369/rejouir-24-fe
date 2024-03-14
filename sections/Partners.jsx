@@ -29,6 +29,32 @@ const Partners = () => (
       </motion.div>
       <div className="flex flex-col items-center py-2">
         <h4 className="text-red-900 text-2xl font-bold tracking-wide mb-4 text-center">
+          T-SHIRT PARTNERS
+        </h4>
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+          className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4"
+        >
+          <div className="flex flex-col items-center space-y-2">
+            <a href="" className="text-white-500 hover:underline hover:text-white-600 py-2">
+              <motion.img
+                src="t-shirt_partner.webp"
+                alt="dharma_vilas"
+                className="w-80 sm:w-90 md:w-80 h-auto object-contain"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                variants={fadeIn('up', 'tween', 0.2, 1)}
+              />
+            </a>
+            <p className="text-center text-red-800">DHARMA VILAS</p>
+          </div>
+        </motion.div>
+      </div>
+      <div className="flex flex-col items-center py-2">
+        <h4 className="text-red-900 text-2xl font-bold tracking-wide mb-4 text-center">
           FOOD PARTNERS
         </h4>
         <motion.div
@@ -43,7 +69,7 @@ const Partners = () => (
               <motion.img
                 src="food_partner.webp"
                 alt="interjet"
-                className="w-20 sm:w-64 md:w-40 h-auto object-contain"
+                className="w-40 sm:w-64 md:w-40 h-auto object-contain"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 variants={fadeIn('up', 'tween', 0.2, 1)}
@@ -69,7 +95,7 @@ const Partners = () => (
               <motion.img
                 src="rainbow.webp"
                 alt="rainbow"
-                className="w-20 sm:w-64 md:w-40 h-auto object-contain"
+                className="w-40 sm:w-64 md:w-40 h-auto object-contain"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 variants={fadeIn('up', 'tween', 0.2, 1)}
