@@ -41,7 +41,7 @@ const Partners = () => (
           <div className="flex flex-col items-center space-y-2">
             <a href="" className="text-white-500 hover:underline hover:text-white-600 py-2">
               <motion.img
-                src="food_partner.png"
+                src="food_partner.webp"
                 alt="interjet"
                 className="w-20 sm:w-64 md:w-40 h-auto object-contain"
                 whileHover={{ scale: 1.1 }}
@@ -67,8 +67,8 @@ const Partners = () => (
           <div className="flex flex-col items-center space-y-2">
             <a href="https://www.youtube.com/@rainbowtvpondicherry4804" className="text-white-500 hover:underline hover:text-white-600 py-2">
               <motion.img
-                src="rainbow.png"
-                alt="interjet"
+                src="rainbow.webp"
+                alt="rainbow"
                 className="w-20 sm:w-64 md:w-40 h-auto object-contain"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -95,7 +95,7 @@ const Partners = () => (
           <div className="flex flex-col items-center space-y-2 px-8">
             <a href="https://www.instagram.com/namma_pondy?igsh=NTc4MTIwNjQ2YQ==" className="text-white-500 hover:underline hover:text-white-600 py-2">
               <motion.img
-                src="namma_pondy.png"
+                src="namma_pondy.webp"
                 alt="namma pondy"
                 className="w-20 sm:w-64 md:w-40 h-auto object-contain"
                 whileHover={{ scale: 1.1 }}
@@ -108,7 +108,7 @@ const Partners = () => (
           <div className="flex flex-col items-center space-y-2 px-8">
             <a href="https://www.instagram.com/pondy.digital?igsh=NTc4MTIwNjQ2YQ==" className="text-white-500 hover:underline hover:text-white-600 py-2">
               <motion.img
-                src="pondy_digital.png"
+                src="pondy_digital.webp"
                 alt="pondy_digital"
                 className="w-20 sm:w-64 md:w-40 h-auto object-contain"
                 whileHover={{ scale: 1.1 }}
@@ -121,7 +121,7 @@ const Partners = () => (
           <div className="flex flex-col items-center space-y-2 px-8">
             <a href="https://www.instagram.com/foodgawker_py?igsh=NTc4MTIwNjQ2YQ==" className="text-white-500 hover:underline hover:text-white-600 py-2">
               <motion.img
-                src="foodgawker_py.jpg"
+                src="foodgawker_py.webp"
                 alt="foodgawker_py"
                 className="w-20 sm:w-64 md:w-40 h-auto object-contain"
                 whileHover={{ scale: 1.1 }}
@@ -134,7 +134,7 @@ const Partners = () => (
           <div className="flex flex-col items-center space-y-2 px-8">
             <a href="https://www.instagram.com/pondy.treasures?igsh=NTc4MTIwNjQ2YQ==" className="text-white-500 hover:underline hover:text-white-600 py-2">
               <motion.img
-                src="pondy.treasures.jpg"
+                src="pondy.treasures.webp"
                 alt="pondy.treasures"
                 className="w-20 sm:w-54 md:w-30 h-auto object-contain "
                 whileHover={{ scale: 1.1 }}
@@ -147,7 +147,7 @@ const Partners = () => (
           <div className="flex flex-col items-center space-y-2 px-8">
             <a href="https://www.instagram.com/trending_pondicherry?igsh=NTc4MTIwNjQ2YQ==" className="text-white-500 hover:underline hover:text-white-600 py-2">
               <motion.img
-                src="trending_pondicherry.png"
+                src="trending_pondicherry.webp"
                 alt="trending_pondicherry"
                 className="w-20 sm:w-54 md:w-30 h-auto object-contain "
                 whileHover={{ scale: 1.1 }}
@@ -160,7 +160,7 @@ const Partners = () => (
           <div className="flex flex-col items-center space-y-2 px-8">
             <a href="https://www.instagram.com/pondy.updates?igsh=NTc4MTIwNjQ2YQ==" className="text-white-500 hover:underline hover:text-white-600 py-2">
               <motion.img
-                src="pondy.updates.jpg"
+                src="pondy.updates.webp"
                 alt="pondy.updates"
                 className="w-20 sm:w-54 md:w-30 h-auto object-contain "
                 whileHover={{ scale: 1.1 }}
