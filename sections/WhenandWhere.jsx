@@ -29,7 +29,7 @@ const WhenandWhere = () => (
         </motion.p>
         <div className="md:w-1/2 md:order-1 flex items-left justify-start max-h-[800px] max-w-[600px] md:pr-12">
           <motion.img
-            src="/gvp2.png"
+            src="/gvp2.webp"
             alt="Example Image"
             className="md:w-full h-auto md:object-cover"
             variants={fadeIn('up', 'tween', 0.5, 0.5)}
