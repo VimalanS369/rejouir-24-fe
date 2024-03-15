@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useRouter } from 'next/navigation';
 import { React, handleSubmit, useState } from 'react';
 import axios from 'axios';
 import styles from '../../styles';
@@ -71,52 +70,50 @@ const Signup = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-4 text-center">
             SIGNUP
           </h1>
-          <label
-            className="py-2 px-1 bg-transparent text-black w-full"
-          >Email
-          </label>
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={userDetails.email}
-            onChange={handleChange}
-            className="py-2 px-3 rounded-md border bg-transparent text-black w-full"
-            required
-          />
-          <label
-            className="py-5 px-1 pt-3 bg-transparent text-black w-full top-5"
-          >Password
-          </label>
-          <input
-            type="password"
-            name="password"
-            placeholder="Your Password"
-            value={userDetails.password}
-            onChange={handleChange}
-            className="py-2 px-3 rounded-md border bg-transparent text-black w-full"
-            required
-          />
-          <label 
-            className="py-5 px-1 pt-3 bg-transparent text-black w-full top-5">Confirm Password</label>
-          <input
-            type="password"
-            name="confirmPassword"
-            placeholder="Confirm Password"
-            value={confirmPassword}
-            onChange={handleConfirmPasswordChange}
-            className="py-2 px-3 rounded-md border bg-transparent text-black w-full"
-            required
-          />
+          <div className="flex flex-col space-y-2">
+            <label className="text-black">Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              value={userDetails.email}
+              onChange={handleChange}
+              className="py-2 px-3 rounded-md border bg-transparent text-black"
+              required
+            />
+          </div>
+          <div className="flex flex-col space-y-2">
+            <label className="text-black">Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Your Password"
+              value={userDetails.password}
+              onChange={handleChange}
+              className="py-2 px-3 rounded-md border bg-transparent text-black"
+              required
+            />
+          </div>
+          <div className="flex flex-col space-y-2">
+            <label className="text-black">Confirm Password</label>
+            <input
+              type="password"
+              name="confirmPassword"
+              placeholder="Confirm Password"
+              value={confirmPassword}
+              onChange={handleConfirmPasswordChange}
+              className="py-2 px-3 rounded-md border bg-transparent text-black"
+              required
+            />
+          </div>
           <button
             type="submit"
             className="py-2 px-4 bg-fire-engine-red hover:bg-red-800 text-black rounded-lg w-full"
-           
           >
             Register
           </button>
           <div className="w-full text-center mt-8">
-            <p className="text-sm text-black">Already Have an account?<a href="/login" className="text-sm text-black font-bold ml-4">Login</a>
+            <p className="text-sm text-black">Already Have an account?<a href="/login" className="text-sm text-fire-engine-red font-bold ml-4">Login</a>
             </p>
           </div>
         </motion.form>
