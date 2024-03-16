@@ -39,7 +39,7 @@ const Partners = () => (
           className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4"
         >
           <div className="flex flex-col items-center space-y-3">
-            <a href="" className="text-white-500 hover:underline hover:text-white-600 py-2">
+            <a href="https://www.enviesalone.com/" className="text-white-500 hover:underline hover:text-white-600 py-2">
               <motion.img
                 src="assoc_partner.webp"
                 alt="dharma_vilas"
