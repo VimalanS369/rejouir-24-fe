@@ -29,7 +29,7 @@ const Partners = () => (
       </motion.div>
       <div className="flex flex-col items-center py-6">
         <h4 className="text-red-900 text-2xl font-bold tracking-wide mb-4 text-center">
-          ASSOCIATE PARTNERS
+          CO-SPONSERS
         </h4>
         <motion.div
           variants={staggerContainer}
