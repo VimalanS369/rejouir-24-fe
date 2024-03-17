@@ -56,7 +56,7 @@ const Guidelines = () => (
                                 </GuidelineStep>
 
                                 <GuidelineStep number="8" title="Registration Video">
-                                <a href='' style={{ textDecoration: 'underline' }}>Click Here</a><span> for Step by Step process for successful registrations.</span>
+                                <a href='https://www.instagram.com/reel/C4mmlPqhOYy/?igsh=NTc4MTIwNjQ2YQ==' style={{ textDecoration: 'underline' }}>Click Here</a><span> for Step by Step process for successful registrations.</span>
                                 </GuidelineStep>
                             </div>
                         </div>
