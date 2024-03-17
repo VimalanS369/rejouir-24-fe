@@ -56,9 +56,17 @@ const Guidelines = () => (
                                 </GuidelineStep>
 
                                 <GuidelineStep number="8" title="Registration Video">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/_vI7ftCmMZM?si=me7JaoCxVRIg3zNI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                <span className='py-4'> (or)</span><br/>
-                                <a href='https://www.instagram.com/reel/C4mmlPqhOYy/?igsh=NTc4MTIwNjQ2YQ==' style={{ textDecoration: 'underline' }}>Click Here</a><span> for Step by Step process for successful registrations.</span>
+                                    <iframe
+                                        class="w-full sm:w-96 md:w-2/3 lg:w-full xl:w-full"
+                                        height="315"
+                                        src="https://www.youtube.com/embed/_vI7ftCmMZM?si=me7JaoCxVRIg3zNI"
+                                        title="YouTube video player"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen
+                                    ></iframe>
+                                    <span className='py-4'> (or)</span><br />
+                                    <a href='https://www.instagram.com/reel/C4mmlPqhOYy/?igsh=NTc4MTIwNjQ2YQ==' style={{ textDecoration: 'underline' }}>Click Here</a><span> for Step by Step process for successful registrations.</span>
                                 </GuidelineStep>
                             </div>
                         </div>
