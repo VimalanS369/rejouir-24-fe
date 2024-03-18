@@ -39,7 +39,7 @@ const Notifyinfo = () => {
       />
       <motion.h4
         ref={marqueeRef} // Attach the ref to the marquee element
-        className="text-center text-xl text-fire-engine-red pb-20 pt-3marquee"
+        className="text-center text-xl text-fire-engine-red pb-20 pt-3 marquee"
         style={{ whiteSpace: 'nowrap' }} // Ensure text does not wrap to the next line
       >
         For successful registration, please Check <span className="font-bold text-black-900">Guidelines</span>. Physical College ID card is mandatory.
@@ -49,13 +49,15 @@ const Notifyinfo = () => {
       </motion.h4>
 
       <motion.div className="flex flex-row justify-between items-center">
-        <div className="mr-4">
+        <div className="mr-4 ">
+          <p className="text-xs font-bold lg:text-base text-secondary-white animate-bounce">Click here for Signup</p>
           <a href='/signup' className="bg-red-700 hover:bg-red-800 text-white btn btn-sm md:btn-md lg:btn-lg btn-active">Register Now</a>
         </div>
         <div className="ml-4">
+          <p className="text-xs font-bold lg:text-base text-secondary-white animate-bounce">Click here for Gate Pass</p>
           <a href='https://docs.google.com/forms/d/e/1FAIpQLSeHVbqo_GjJkA4EJtjt0qktf5Acr1pL2XYAAU5MIFQ9wQuogQ/viewform?usp=sf_link' className="bg-red-700 hover:bg-red-800 text-white btn btn-sm md:btn-md lg:btn-lg btn-active">Gate Pass link</a>
         </div>
-      </motion.div>
+</motion.div>
 
     </section>
   );
